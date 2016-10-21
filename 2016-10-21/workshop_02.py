@@ -73,4 +73,4 @@ def ggpl_bone_structure(file_name):
     return STRUCT(frames)
 
 
-VIEW(ggpl_bone_structure("simple_frame_data_457024.csv"))
+VIEW(ggpl_bone_structure("frame_data_457024.csv"))
