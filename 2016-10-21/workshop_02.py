@@ -62,11 +62,15 @@ def ggpl_bone_structure(file_name):
                 pillarSection = [float(row[2]), float(row[3])]
 
                 distancePillars = []
-                for index in range(5, int(row[4]) + 5):
+                start_point =  5
+                finish_point = int(row[4]) + start_point
+                for index in range(start_point, finish_point):
                     distancePillars.append(int(row[index]))
 
                 intersectHeights = []
-                for index in range(int(row[4]) + 6, len(row)):
+                start_point = finish_point + 1
+                finish_point = int(row[finish_point]) + start_point
+                for index in range(start_point, finish_point):
                     intersectHeights.append(int(row[index]))
 
                 frames.append(createBaseFrame(origin, beamSection, pillarSection, distancePillars, intersectHeights))
