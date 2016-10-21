@@ -38,24 +38,59 @@ def ggpl_bone_structure(file_name):
 
         return STRUCT(fStructs)
 
-    def createBaseFrame(origin, beamSection, pillarSection, distancePillars, intersectHeights):
-        return STRUCT([
-            T([1,2,3])([origin[0], origin[1], origin[2]]),
-            planeStructure(beamSection, pillarSection, distancePillars, intersectHeights)
-        ])
+    def lookahead(iterable):
+        """Pass through all values from the given iterable, augmented by the
+        information if there are more values to come after the current one
+        (True), or if it is the last value (False).
+        """
+        # Get an iterator and pull the first value.
+        it = iter(iterable)
+        last = next(it)
+        # Run the iterator to exhaustion (starting from the second value).
+        for val in it:
+            # Report the *previous* value (more to come).
+            yield last, True
+            last = val
+        # Report the last value.
+        yield last, False
 
-    def createTrasversalBean():
-        return 0
+    def createTrasversalBeam(distance, beamSection, pillarSection, distancePillars, intersectHeights):
+        y = []
+        for index in range(len(distancePillars)):
+            y.append(pillarSection[1])
+            y.append(- distancePillars[index])
+        y.append(pillarSection[1])
+
+        x = [
+            - pillarSection[0],
+            distance
+        ]
+
+        z = []
+        for i in range(len(intersectHeights)):
+            if i == 0:
+                z.append(-intersectHeights[i])
+            else:
+                z.append(-intersectHeights[i] + beamSection[1])
+            z.append(beamSection[1])
+
+        return PROD([
+                PROD([QUOTE(x), QUOTE(y)]),
+                QUOTE(z)
+        ])
 
     frames = []
     odd = True
-    origin = [0, 0, 0]
+    distance = 0
+    transaction = None
     with open(file_name, 'rb') as csvfile:
-        spamreader = csv.reader(csvfile)
-        for row in spamreader:
+        builderreader = csv.reader(csvfile)
+
+        for row, has_more in lookahead(builderreader):
             if odd :
                 odd = False
-                origin = [origin[0] + float(row[0]), origin[1] + float(row[1]), origin[2] + float(row[2])]
+                distance = float(row[0])
+                transaction = T([1,2,3])([float(row[0]), float(row[1]), float(row[2])])
             else:
                 odd = True
                 beamSection = [float(row[0]), float(row[1])]
@@ -73,8 +108,24 @@ def ggpl_bone_structure(file_name):
                 for index in range(start_point, finish_point):
                     intersectHeights.append(int(row[index]))
 
-                frames.append(createBaseFrame(origin, beamSection, pillarSection, distancePillars, intersectHeights))
+                frames.append(
+                    planeStructure(beamSection, pillarSection, distancePillars, intersectHeights)
+                )
+
+                if has_more:
+                    frames.append(
+                        createTrasversalBeam(
+                            distance,
+                            beamSection,
+                            pillarSection,
+                            distancePillars,
+                            intersectHeights
+                        )
+                    )
+
+                frames.append(transaction)
+
     return STRUCT(frames)
 
 
-VIEW(ggpl_bone_structure("frame_data_457024.csv"))
+VIEW(ggpl_bone_structure("simple_frame_data_457024.csv"))
