@@ -1,17 +1,69 @@
+
+# coding: utf-8
+
+# # Workshop 2
+# Creazione di un struttura in cemento armato da un file csv che rappresenta un modello prestabilito
+# ![modello](http://www.tecnisoft.it/immagini/breve_nove.jpg)
+
+# In[6]:
+
 from pyplasm import *
 import csv
 
-"""http://www.calcolostrutture.com/public/uploaded/News_911_01.jpg"""
 
+# ## Algoritmo di creazione della parete dell'edificio
+# 
+# L'algoritmo si basa sul fatto che la parete può essere diriva in due tipi di strutture basi:
+# - La struttura a forma di F creata dalla funzione __createFStruct__ . Questo tipo di struttura si ripete più volte per creare la struttura finale
+# - La struttura a forma di I creata dalla funzione __createFinalStruct__ . Questo tipo di struttura viene eseguita una sola volta alla fine della creazione delle strutture a forma di F
+# 
 
+# In[7]:
+
+""" ggpl_bone_structure
+
+Questo metodo crea una struttura 3D partendo dai dati presenti sul file csv passato come parametro
+
+@param file_name: il file csv con i dati della struttura
+@returns: la struttura 
+"""
 def ggpl_bone_structure(file_name):
+    
+    """ planeStructure
+    
+    Questo metodo create la struttura base avendo come dati di imput la sezione dele travi, la sezione del pilastro,
+     la distanza tra un pilastro e l'altro e l'alterzza di intersezione delle travi sui pilastri
+     
+     @param beanSection: una tupla (bx,bz) che contiene la dimensione delle travi
+     @param pillarSection: una tupla (px,py) che contiene la dimensione dei pilastri
+     @param distancePillars: una lista di distanze relative tra un pilastro e l'altro
+     @param intersectHeights: una lista di altezze relative che indicano la distranza tra una trave e l'altra sull'asse x
+     @returns: la struttura base, che corrisponde ad una parete dell'edificio
+    """
     def planeStructure(beamSection, pillarSection, distancePillars, intersectHeights):
         fStructs = []
-
+        
+        """ createFinalStruct
+        
+        Questo metodo crea una pilastro senza travi
+        
+        @param startPoint: Il punto di intersezione del pilastro con la base del piano di lavoro
+        @param height: L'altezza del pilastro
+        @returns: Il pilastro
+        """
         def createFinalStruct(startPoint, height):
             pillar = CUBOID([pillarSection[0], pillarSection[1], height])
             return STRUCT([T(2)(startPoint), pillar])
 
+        """ createFStruct
+        
+        Questo metodo crea la struttura portante con il pilastro e le travi di riferimento
+        
+        @param startPoint: Il punto di intersezione del pilastro con la base del piano di lavoro
+        @param height: L'altezza del pilastro
+        @param lengthBeam: La lunghezza delle travi
+        @returns: Il pilastro
+        """
         def createFStruct(startPoint, height, lengthBeam):
             fStruct = []
 
@@ -38,7 +90,17 @@ def ggpl_bone_structure(file_name):
         fStructs.append(createFinalStruct(startDistance, height))
 
         return STRUCT(fStructs)
-
+    
+    """ createTrasversalBeam
+    
+    Questa funzione crea le travi di collegamento tra una parete e l'altra
+    
+    @param beanSection: una tupla (bx,bz) che contiene la dimensione delle travi
+    @param pillarSection: una tupla (px,py) che contiene la dimensione dei pilastri
+    @param distancePillars: una lista di distanze relative tra un pilastro e l'altro
+    @param intersectHeights: una lista di altezze relative che indicano la distranza tra una trave e l'altra sull'asse x
+    @returns: la struttura base, che corrisponde ad una parete dell'edificio
+    """
     def createTrasversalBeam(distance, beamSection, pillarSection, distancePillars, intersectHeights):
         y = []
         for index in range(len(distancePillars)):
@@ -63,7 +125,21 @@ def ggpl_bone_structure(file_name):
                 PROD([QUOTE(x), QUOTE(y)]),
                 QUOTE(z)
         ])
-
+    
+    """ parseCSV
+    
+    Questo metodo prende in input un file_name che indica il file csv da parsare per avere le informazioni della struttura
+    
+    Argomenti:
+        file_name (string): il file name del file csv
+        
+    Yields:
+        transaction: il vettore di traslazione tra una parete e l'altra
+        beanSection: una tupla (bx,bz) che contiene la dimensione delle travi
+        pillarSection: una tupla (px,py) che contiene la dimensione dei pilastri
+        distancePillars: una lista di distanze relative tra un pilastro e l'altro
+        intersectHeights: una lista di altezze relative che indicano la distranza tra una trave e l'altra sull'asse x
+    """
     def parseCSV(file_name):
         odd = True
         transaction = None
@@ -112,4 +188,12 @@ def ggpl_bone_structure(file_name):
     return STRUCT(frames)
 
 
-VIEW(ggpl_bone_structure("frame_data_457024.csv"))
+# In[ ]:
+
+VIEW(ggpl_bone_structure("./frame_data_457024.csv"))
+
+
+# In[ ]:
+
+
+

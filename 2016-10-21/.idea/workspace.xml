@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab40ba00-0196-44dc-8a18-2a098c15faac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/breve_nove.jpg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/News_911_01.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frame_data_457024.csv" afterPath="$PROJECT_DIR$/frame_data_457024.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_02.ipynb" afterPath="$PROJECT_DIR$/workshop_02.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_02.py" afterPath="$PROJECT_DIR$/workshop_02.py" />
     </list>
     <ignored path="2016-10-21.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -504,7 +498,14 @@
       <option name="project" value="LOCAL" />
       <updated>1477126653508</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Aggiunta workspace">
+      <created>1477133001832</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1477133001832</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -518,7 +519,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13948497" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -560,7 +561,8 @@
     <MESSAGE value="Versione corretta per la creazione di travi trasversali in caso di strutture semplici" />
     <MESSAGE value="Astrazione parser CSV" />
     <MESSAGE value="Aggiunta immagine di riferimento" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta immagine di riferimento" />
+    <MESSAGE value="Aggiunta workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
