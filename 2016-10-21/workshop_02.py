@@ -94,15 +94,17 @@ def ggpl_bone_structure(file_name):
                     yield transaction, beamSection, pillarSection, distancePillars, intersectHeights
 
     frames = []
-    distance = 0
     for transaction, beamSection, pillarSection, distancePillars, intersectHeights in parseCSV(file_name):
-        if transaction[0] != 0:
-            distance = transaction[0]
+        frames.append(T(2)(transaction[1]))
 
-        frames.append(
-            createTrasversalBeam(distance, beamSection, pillarSection, distancePillars, intersectHeights)
-        )
-        frames.append(T([1, 2, 3])(transaction))
+        if transaction[0] != 0:
+            frames.append(
+                createTrasversalBeam(
+                    transaction[0], beamSection, pillarSection, distancePillars,intersectHeights
+                )
+            )
+
+        frames.append(T([1, 3])([transaction[0], transaction[2]]))
         frames.append(
             planeStructure(beamSection, pillarSection, distancePillars, intersectHeights)
         )
