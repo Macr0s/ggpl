@@ -20,15 +20,16 @@ def ggpl_l_shaped_stair(dx, dy, dz):
         return steps
 
     step, riser, tread = stairValue(dz)
-    axis = 1
     stairs = []
-    first = True
+    stay_on_x = True
+    way = 0
 
     while step != 0:
-        length = dx if axis == 1 else dy
-        possible =  int(math.floor((length - (0 if first else 1)) / tread))
-        first = False
-        print step
+        length = dx if stay_on_x else dy
+
+        offset = 2 if stay_on_x and way != 2 else (3 if stay_on_x else 1)
+
+        possible = int(math.floor((length - offset) / tread))
 
         if possible >= step:
             stairs.extend(makeStair(step, riser, tread))
@@ -37,17 +38,22 @@ def ggpl_l_shaped_stair(dx, dy, dz):
             step -= possible
             stairs.extend(makeStair(possible, riser, tread))
             stairs.append(T([2])([tread]))
+
             stairs.append(CUBOID([1, 1, riser]))
-            stairs.append(T(2 if axis == 1 else 1)(1))
-            stairs.append(T(axis)(1))
+            stairs.append(T(2 if stay_on_x else 1)(1))
+            stairs.append(T(1 if stay_on_x else 2)(1))
             stairs.append(R([1, 2])(- math.pi / 2.0))
             stairs.append(T(3)(riser))
 
-            axis = 2 if axis == 1 else 1
+            stay_on_x = not stay_on_x
+            way += + 1 if way != 2 else 0
 
     return STRUCT(stairs)
 
 stair = ggpl_l_shaped_stair(4,3,10)
 print SIZE([1,2,3])(stair)
 
-VIEW(stair)
+VIEW(STRUCT([
+    COLOR(RED)(stair),
+    CUBOID([4,3,10])
+]))
