@@ -210,7 +210,7 @@ def ggpl_l_shaped_stair(dx, dy, dz):
 
 # In[6]:
 
-stair = ggpl_l_shaped_stair(4,3,10)
+stair = ggpl_l_shaped_stair(4,10,3)
 print SIZE([1,2,3])(stair)
 
 VIEW(stair)
