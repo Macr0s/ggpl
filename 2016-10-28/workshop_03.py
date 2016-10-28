@@ -210,7 +210,7 @@ def ggpl_l_shaped_stair(dx, dy, dz):
 
 # In[6]:
 
-stair = ggpl_l_shaped_stair(4,10,3)
+stair = ggpl_l_shaped_stair(4,3,10)
 print SIZE([1,2,3])(stair)
 
 VIEW(stair)
@@ -219,12 +219,24 @@ VIEW(stair)
 # ## Esempi di esecuzione
 # 
 # ### Esempio 1
+# ![example1_original](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-10-28/images/LS_01.gif)
 # 
+# ```
+# VIEW(ggpl_l_shaped_stair(4,3,10))
+# ```
+# 
+# ![example1_render](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-10-28/images/example/example1.png)
 # ### Esempio 2
 # 
-# ### Esempio 3
+# ![example2_original](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-10-28/images/Jyvaskyla_tower_stairs.jpg)
 # 
-# ### Esempio 4
+# ```
+# VIEW(ggpl_l_shaped_stair(4,3,30))
+# ```
+# 
+# ![example2_render1](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-10-28/images/example/example2.1.png)
+# 
+# ![example2_render1](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-10-28/images/example/example2.2.png)
 # 
 
 # # Link Utili
