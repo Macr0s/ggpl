@@ -49,7 +49,7 @@ def ggpl_l_shaped_stair(dx, dy, dz):
             stairs.extend(makeStair(possible, riser, tread))
             stairs.append(T([2])([tread]))
 
-            stairs.append(CUBOID([1, 1, riser]))
+            stairs.append(CUBOID([1 + tread, 1, riser]))
             stairs.append(T(2 if stay_on_x else 1)(1))
             stairs.append(T(1 if stay_on_x else 2)(1))
             stairs.append(R([1, 2])(- math.pi / 2.0))
