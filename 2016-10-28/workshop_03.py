@@ -53,7 +53,4 @@ def ggpl_l_shaped_stair(dx, dy, dz):
 stair = ggpl_l_shaped_stair(4,3,10)
 print SIZE([1,2,3])(stair)
 
-VIEW(STRUCT([
-    COLOR(RED)(stair),
-    CUBOID([4,3,10])
-]))
+VIEW(stair)
