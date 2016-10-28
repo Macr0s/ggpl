@@ -3,6 +3,16 @@ from math import *
 
 
 def ggpl_l_shaped_stair(dx, dy, dz):
+    def makeStep(tread, riser):
+        base = MKPOL([[[0, 0], [0, riser], [tread, riser], [2 * tread, riser], [tread, 0]], [[1, 2, 3, 4, 5]], 1])
+        base = PROD([base, QUOTE([1])])
+
+        return STRUCT([
+            R([1, 3])(-math.pi / 2),
+            R([1, 2])(-3 * math.pi / 2),
+            base
+        ])
+
     def stairValue(dz):
         step = math.floor(dz * 100 / 18) + 1
         riser = dz * 100 / step
@@ -15,7 +25,7 @@ def ggpl_l_shaped_stair(dx, dy, dz):
         for i in range(step):
             if i != 0:
                 steps.append(T([2, 3])([tread, riser]))
-            steps.append(CUBOID([1, tread, riser]))
+            steps.append(makeStep(tread, riser))
 
         return steps
 
