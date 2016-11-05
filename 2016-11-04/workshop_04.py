@@ -14,17 +14,54 @@ from pyplasm import *
 
 # In[26]:
 
+""" ggpl_hip_roof
+
+Questa funzione prende in ingresso i dati del tetto divisi in due gruppi vertici e celle.
+
+@param verts: i vertifici del tetto
+@param cells: la cella del tetto
+@return: il tetto
+
+"""
 def ggpl_hip_roof(verts, cells):
     roof = []
-
+    
+    """ makeRidge
+    
+    Questa funzione avendo in input i dati del tetto crea la copertura del tetto
+    
+    @param verts: i vertifici del tetto
+    @param cells: la cella del tetto
+    @return: la copertura del tetto
+    
+    """
     def makeRidge(verts, cells):
         remove=[]
-
+        
+        
+        """ findFN
+        
+        Questa funzione verifica se il punto x ha come coordinata z un valore diverso da zero. Se il punto soddisfa 
+        questa condizione allora viene inserito nella lista globale remove
+        
+        @param x: il punto da controllare
+        @return: il punto pasato come parametro
+        
+        """        
         def findFN(x):
             if not x[2] == 0:
                 remove.append(x)
             return x
-
+        
+        """ removeFN
+        
+        Questa funzione serve per muovere i punti interni alla struttura in alto cosi da creare la copertura del
+        tetto
+        
+        @param x: il punto della struttura
+        @return: il nuovo punto della struttura
+        
+        """
         def removeFN(x):
             for i in range(len(remove)):
                 y = remove[i]
@@ -42,7 +79,16 @@ def ggpl_hip_roof(verts, cells):
             T(3)(0.1),
             ridge
         ])
-
+    
+    """ makeStructure
+    
+    Questa funzione avendo come input i dati del tetto crea la struttura portante del tetto stesso
+    
+    @param verts: i vertifici del tetto
+    @param cells: la cella del tetto
+    @return: la struttura portante del tetto
+    
+    """
     def makeStructure(verts, cells):
         return OFFSET([0.1, 0.2, 0.1])(SKEL_1(MKPOL([verts,cells,None])))
 
@@ -102,9 +148,26 @@ VIEW(ggpl_hip_roof([
 # In[14]:
 
 def ggpl_hip_roof_hpc(struct):
+    
+    """ cleanUKPOL
+    
+    Questa funzioen serve per determinare i vertici e le celle da un hpc
+    
+    @param skel: l'HPC in questione
+    @return: una lista di due elementi che corrisponde uno ai vertici e l'altro alle celle
+    
+    """
     def cleanUKPOL(skel):
         points, cells, none = UKPOL(skel)
-
+        
+        """ roundFN
+        
+        Questa funzione prende in input un punto dello spazio e lo arrotonda al punto con coordinate intere
+        
+        @param x: il punto da arrotondare
+        @return: il nuovo punto arrotondato
+        
+        """
         def roundFN(x):
             return [round(x[0]), round(x[1]), round(x[2])]
 
@@ -133,8 +196,25 @@ def ggpl_hip_roof_hpc(struct):
 
             for i in range(len(value[2])):
                 support.append([value[1], value[2][i]])
-
-        def searchFN(x):
+        
+        """ iterateFN
+        
+        Questa funzione corregge la cella x
+        
+        @param x: la cella con gli indici sbagliati
+        @return: la cella corretta
+        
+        """
+        def iterateFN(x):
+            
+            """ replace
+            
+            Questa funzione verifica se l'elemento y della cella è corretto e se non lo è allora lo corregge
+            
+            @param y: l'elemento della cella
+            @return: l'elemento della cella corretto
+            
+            """
             def replace (y):
                 for i in range(len(support)):
                     if support[i][1] == y:
@@ -143,18 +223,46 @@ def ggpl_hip_roof_hpc(struct):
 
             return map(replace, x)
 
-        cells_new = map(searchFN, cells)
+        cells_new = map(iterateFN, cells)
 
         return [points, cells_new]
     
+     """ makeRidge
+    
+    Questa funzione avendo in input i dati del tetto crea la copertura del tetto
+    
+    @param verts: i vertifici del tetto
+    @param cells: la cella del tetto
+    @return: la copertura del tetto
+    
+    """
     def makeRidge(verts, cells):
         remove = []
-
+        
+        
+        """ findFN
+        
+        Questa funzione verifica se il punto x ha come coordinata z un valore diverso da zero. Se il punto soddisfa 
+        questa condizione allora viene inserito nella lista globale remove
+        
+        @param x: il punto da controllare
+        @return: il punto pasato come parametro
+        
+        """
         def findFN(x):
             if not x[2] == 0:
                 remove.append(x)
             return x
-
+        
+        """ removeFN
+        
+        Questa funzione serve per muovere i punti interni alla struttura in alto cosi da creare la copertura del
+        tetto
+        
+        @param x: il punto della struttura
+        @return: il nuovo punto della struttura
+        
+        """
         def removeFN(x):
             for i in range(len(remove)):
                 y = remove[i]
@@ -174,11 +282,8 @@ def ggpl_hip_roof_hpc(struct):
         ])
 
     verts, cells = cleanUKPOL(struct)
-    print verts
-    print cells
 
     roof = []
-
     ridge = makeRidge(verts, cells)
     struct = OFFSET([0.1, 0.2, 0.1])(SKEL_1(struct))
 
@@ -209,8 +314,3 @@ VIEW(ggpl_hip_roof_hpc(MKPOL([
 # ![example3.2](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-11-04/images/example3.2.png)
 # 
 # ![example3.3](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-11-04/images/example3.3.png)
-
-# In[ ]:
-
-
-
