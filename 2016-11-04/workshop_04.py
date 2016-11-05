@@ -11,6 +11,21 @@ from pyplasm import *
 
 
 # ## Versione 1
+# 
+# In questa versione della funzione si ha un caso più semplice dove non si ha la necessita di determinare i vertici e le celle da un HPC. Per questo ci possiamo concentrarre sull'algoritmo di creazione della struttura portante del tetto e della sua copertura.
+# 
+# Per quanto riguarda la creazione della struttura portante del tetto, l'algoritmo di creazione si può definire nel seguente modo:
+# 1. Viene creato la struttura piena del tetto
+# 2. Per determinare lo scheletro portante della struttura viene utilizzata la funzione SKEL_1 applicata alla struttura piena
+# 3. La funzione SKEL_1 genera una struttura portante con spessore mlto sottile
+# 4. Per rendere questa struttura molto più grande e verosimile basta applicare alla struttura appena generata la funzione OFFSET
+# 
+# Per quanto riguarda la creazione della copertura del tetto, l'algoritmo può essere definito nel seguento modo:
+# 1. Cerco i punti che sono posizionati nell aparte alta del tetto
+# 2. Ogni punto in alto al tetto hanno un loro corrispettivo sul piano delle x e y.
+# 3. Questi punti vengono presi e spostati in alto 
+# 
+# Lo spostamento in alto di questi punti permette di trasformare una struttura piena nella corpertura nella stessa struttura.
 
 # In[26]:
 
@@ -144,8 +159,16 @@ VIEW(ggpl_hip_roof([
 # ![example2.3](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-11-04/images/example2.3.png)
 
 # ## Versione 2
+# 
+# In questa versione della funzione viene aggiunta alla logica di crezione della copertura del tetto e della sua struttura portante, la logica di conversione della struttura piena a una serie di vertici e celle.
+# 
+# L'algoritmo di conversione della struttura piena si può definire nel seguente modo:
+# 1. Genero un insieme di punti e celle attraverso la funzione UKPOL applicata alla struttura piena
+# 2. Bisogna pulire sia i punti che le celle generate
+# 3. Per la pulizia dei punti bisogna prima arrotondarli all'intero più vicino e bisogna prendere solo i punti unici
+# 4. Per la pulizia delle celle bisogna sostiture gli indici delle celle originali con i nuovi indici generati sul nuovi insieme degli indici
 
-# In[14]:
+# In[34]:
 
 def ggpl_hip_roof_hpc(struct):
     
@@ -174,28 +197,28 @@ def ggpl_hip_roof_hpc(struct):
         points = map(roundFN, points)
 
         point_dict = {}
+        j = 1
 
         for i in range(len(points)):
             key = ''.join(str(e) for e in points[i])
 
             if (point_dict.has_key(key)):
-                point_dict[key][0] += 1
-                point_dict[key][2].append(i)
+                point_dict[key][1].append(i + 1)
             else:
                 point_dict[key] = [
-                    1,
-                    i + 1,
-                    [],
+                    j,
+                    [i+ 1],
                     points[i]
                 ]
+                j += 1
 
         points_new = []
         support = []
         for value in point_dict.values():
-            points_new.append(value[3])
+            points_new.append(value[2])
 
-            for i in range(len(value[2])):
-                support.append([value[1], value[2][i]])
+            for i in range(len(value[1])):
+                support.append([value[0], value[1][i]])
         
         """ iterateFN
         
@@ -294,7 +317,7 @@ def ggpl_hip_roof_hpc(struct):
 
 # ### Esempio 1
 
-# In[29]:
+# In[36]:
 
 VIEW(ggpl_hip_roof_hpc(MKPOL([
     [
