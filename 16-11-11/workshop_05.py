@@ -178,6 +178,23 @@ def ggpl_table_with_chair(dx, dy, dz):
     ])
 
 
-v = ggpl_table_with_chair(0.60, 1, 1)
+def ggpl_table_with_chair_arm(dx, dy, dz):
+    depth_leg = 0.05
+    distance_leg = 0.03
+    table = ggpl_table(dx, dy * 0.5, dz * 0.8, depth_leg, distance_leg)
+    chair = ggpl_chair_with_arm(dx - (depth_leg * 2 + distance_leg * 2 + 0.02), dy * 0.5, dz, depth_leg)
+
+    return STRUCT([
+        table,
+        T([1,2])([depth_leg + distance_leg + 0.01, dy * 0.5]),
+        chair
+    ])
+
+
+"""def ggpl_table_canteen(dx, dy, dz):"""
+
+
+
+v = ggpl_table_with_chair_arm(0.60, 1, 1)
 print SIZE([1,2,3])(v)
 VIEW(v)
