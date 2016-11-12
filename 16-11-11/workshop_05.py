@@ -191,10 +191,78 @@ def ggpl_table_with_chair_arm(dx, dy, dz):
     ])
 
 
-"""def ggpl_table_canteen(dx, dy, dz):"""
+def ggpl_table_canteen(dx, dy, dz):
+    depth_leg = 0.030 * dx
+    heigth_leg = 0.45 * dz - depth_leg
+    depth_table = 0.03 * dx
+    depth_chair = 0.30 * dy
+
+    def makeLeg(dx, dy, dz):
+        return PROD([
+            PROD([
+                QUOTE([depth_leg, - (dx - depth_leg * 2), depth_leg]),
+                QUOTE([depth_leg, - (dy - depth_leg * 2), depth_leg])
+            ]),
+            QUOTE([0, heigth_leg])
+        ])
+
+    def makeStruct(dx, dy, dz):
+        return [
+            PROD([
+                PROD([
+                    QUOTE([0, dx]),
+                    QUOTE([depth_leg, - (dy - depth_leg * 2), depth_leg])
+                ]),
+                QUOTE([-heigth_leg, depth_leg])
+            ]),
+            PROD([
+                PROD([
+                    QUOTE([- (dx - depth_leg) / 2, depth_leg]),
+                    QUOTE([-depth_leg,  (dy - depth_leg * 2), -depth_leg])
+                ]),
+                QUOTE([-heigth_leg, depth_leg])
+            ]),
+            PROD([
+                PROD([
+                    QUOTE([- (dx - depth_leg) / 2 + depth_leg, depth_leg, - depth_leg, depth_leg]),
+                    QUOTE([- depth_chair, depth_leg, - dz + depth_leg * 2 + depth_chair *2, depth_leg])
+                ]),
+                QUOTE([-heigth_leg , dz - heigth_leg - depth_table])
+            ]),
+            PROD([
+                PROD([
+                    QUOTE([0, dx]),
+                    QUOTE([-depth_chair, dy - depth_chair * 2])
+                ]),
+                QUOTE([- dz + depth_table, depth_table])
+            ])
+        ]
+
+    def makeChair(dx, dy, dz):
+        return [
+            PROD([
+                PROD([
+                    QUOTE([0, dx]),
+                    QUOTE([depth_chair, - dy + depth_chair * 2, depth_chair])
+                ]),
+                QUOTE([- depth_leg - heigth_leg, depth_table])
+            ]),
+            PROD([
+                PROD([
+                    QUOTE([0, dx]),
+                    QUOTE([depth_table, - dy + depth_table * 2, depth_table])
+                ]),
+                QUOTE([- depth_leg - heigth_leg - depth_table, dz - depth_leg - heigth_leg - depth_table])
+            ])
+        ]
+
+    final = [makeLeg(dx, dy, dz)]
+    final.extend(makeStruct(dx, dy, dz))
+    final.extend(makeChair(dx, dy, dz))
+
+    return COLOR(intRGBColor([215, 190, 157]))(STRUCT(final))
 
 
-
-v = ggpl_table_with_chair_arm(0.60, 1, 1)
+v = ggpl_table_canteen(1, 1, 1)
 print SIZE([1,2,3])(v)
 VIEW(v)
