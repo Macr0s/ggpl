@@ -51,6 +51,11 @@ def ggpl_chair(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01,
     ])
 
 
+v = ggpl_chair(0.40, 0.40, 0.9)
+print SIZE([1,2,3])(v)
+VIEW(v)
+
+
 def ggpl_chair_with_arm(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
     chair = ggpl_chair(dx - depth_leg * 4, dy, dz, depth_leg, distance_leg, depth_chair, height_leg)
 
@@ -101,6 +106,11 @@ def ggpl_chair_with_arm(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_ch
     ])
 
 
+v = ggpl_chair_with_arm(0.40, 0.40, 0.9)
+print SIZE([1,2,3])(v)
+VIEW(v)
+
+
 def ggpl_chair_with_desk(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
     chair = ggpl_chair_with_arm(dx, dy * 0.7, dz, depth_leg, distance_leg, depth_chair, height_leg)
 
@@ -122,6 +132,11 @@ def ggpl_chair_with_desk(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_c
         T(2)(dy * 0.3),
         chair
     ])
+
+
+v = ggpl_chair_with_desk(0.40, 0.40, 0.9)
+print SIZE([1,2,3])(v)
+VIEW(v)
 
 
 def ggpl_table(dx, dy, dz, depth_leg=0.05, distance_leg=0.03, depth_table=0.05):
@@ -165,6 +180,11 @@ def ggpl_table(dx, dy, dz, depth_leg=0.05, distance_leg=0.03, depth_table=0.05):
     ]))
 
 
+v = ggpl_table(0.60, 1, 1)
+print SIZE([1,2,3])(v)
+VIEW(v)
+
+
 def ggpl_table_with_chair(dx, dy, dz):
     depth_leg = 0.05
     distance_leg = 0.03
@@ -178,6 +198,11 @@ def ggpl_table_with_chair(dx, dy, dz):
     ])
 
 
+v = ggpl_table_with_chair(0.60, 1, 1)
+print SIZE([1,2,3])(v)
+VIEW(v)
+
+
 def ggpl_table_with_chair_arm(dx, dy, dz):
     depth_leg = 0.05
     distance_leg = 0.03
@@ -189,6 +214,11 @@ def ggpl_table_with_chair_arm(dx, dy, dz):
         T([1,2])([depth_leg + distance_leg + 0.01, dy * 0.5]),
         chair
     ])
+
+
+v = ggpl_table_with_chair_arm(1, 1, 1)
+print SIZE([1,2,3])(v)
+VIEW(v)
 
 
 def ggpl_table_canteen(dx, dy, dz):
