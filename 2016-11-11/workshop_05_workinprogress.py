@@ -1,14 +1,5 @@
-
-# coding: utf-8
-
-# In[ ]:
-
 from pyplasm import *
 
-
-# # Funziona base per i colori
-
-# In[ ]:
 
 def intRGBColor(values):
     return Color4f([values[0] / 255.0,
@@ -16,10 +7,6 @@ def intRGBColor(values):
                     values[2] / 255.0,
                     1.0])
 
-
-# # Sedia
-
-# In[ ]:
 
 def ggpl_chair(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
     def makeLeg(dx, dy, dz):
@@ -63,19 +50,6 @@ def ggpl_chair(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01,
         COLOR(intRGBColor([215, 190, 157]))(CUBOID([dx, depth_chair, dz - depth_chair - height_leg]))
     ])
 
-
-# ## Esempio
-
-# In[ ]:
-
-v = ggpl_chair(0.40, 0.40, 0.9)
-print SIZE([1,2,3])(v)
-VIEW(v)
-
-
-# # Sedia con Braccioli
-
-# In[ ]:
 
 def ggpl_chair_with_arm(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
     chair = ggpl_chair(dx - depth_leg * 4, dy, dz, depth_leg, distance_leg, depth_chair, height_leg)
@@ -127,19 +101,6 @@ def ggpl_chair_with_arm(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_ch
     ])
 
 
-# ## Esempio
-
-# In[ ]:
-
-v = ggpl_chair_with_arm(0.40, 0.40, 0.9)
-print SIZE([1,2,3])(v)
-VIEW(v)
-
-
-# # Sedia con tavolino
-
-# In[ ]:
-
 def ggpl_chair_with_desk(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
     chair = ggpl_chair_with_arm(dx, dy * 0.7, dz, depth_leg, distance_leg, depth_chair, height_leg)
 
@@ -162,19 +123,6 @@ def ggpl_chair_with_desk(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_c
         chair
     ])
 
-
-# ## Esempio
-
-# In[ ]:
-
-v = ggpl_chair_with_desk(0.40, 0.40, 0.9)
-print SIZE([1,2,3])(v)
-VIEW(v)
-
-
-# # Tavolo
-
-# In[ ]:
 
 def ggpl_table(dx, dy, dz, depth_leg=0.05, distance_leg=0.03, depth_table=0.05):
     def makeLeg(dx, dy, dz):
@@ -217,19 +165,6 @@ def ggpl_table(dx, dy, dz, depth_leg=0.05, distance_leg=0.03, depth_table=0.05):
     ]))
 
 
-# # Esempio
-
-# In[ ]:
-
-v = ggpl_table(0.60, 1, 1)
-print SIZE([1,2,3])(v)
-VIEW(v)
-
-
-# # Tavolo con sedia
-
-# In[ ]:
-
 def ggpl_table_with_chair(dx, dy, dz):
     depth_leg = 0.05
     distance_leg = 0.03
@@ -243,19 +178,6 @@ def ggpl_table_with_chair(dx, dy, dz):
     ])
 
 
-# ## Esempio
-
-# In[ ]:
-
-v = ggpl_table_with_chair(0.60, 1, 1)
-print SIZE([1,2,3])(v)
-VIEW(v)
-
-
-# # Tavolo con sedia con braccioli
-
-# In[ ]:
-
 def ggpl_table_with_chair_arm(dx, dy, dz):
     depth_leg = 0.05
     distance_leg = 0.03
@@ -268,19 +190,6 @@ def ggpl_table_with_chair_arm(dx, dy, dz):
         chair
     ])
 
-
-# ## Esempio
-
-# In[ ]:
-
-v = ggpl_table_with_chair_arm(1, 1, 1)
-print SIZE([1,2,3])(v)
-VIEW(v)
-
-
-# # Tavolo da mensa struttura base
-
-# In[ ]:
 
 def ggpl_table_canteen_base(dx, dy, dz):
     depth_leg = 0.030 * dx
@@ -298,6 +207,7 @@ def ggpl_table_canteen_base(dx, dy, dz):
         ])
 
     def makeStruct(dx, dy, dz):
+
         return [
             PROD([
                 PROD([
@@ -338,10 +248,6 @@ def ggpl_table_canteen_base(dx, dy, dz):
 
     return final
 
-
-# # Tavolo da mensa con seduta unica
-
-# In[ ]:
 
 def ggpl_table_canteen(dx, dy, dz):
     depth_leg = 0.030 * dx
@@ -385,19 +291,6 @@ def ggpl_table_canteen(dx, dy, dz):
     return COLOR(intRGBColor([215, 190, 157]))(STRUCT(final))
 
 
-# ## Esempio
-
-# In[ ]:
-
-v = ggpl_table_canteen(1, 1, 1)
-print SIZE([1,2,3])(v)
-VIEW(v)
-
-
-# # Tavolo da mensa con seduta divisa
-
-# In[ ]:
-
 def ggpl_table_canteen_single_chair(dx, dy, dz):
     table = ggpl_table_canteen_base(dx, dy, dz)
     depth_leg = 0.030 * dx
@@ -415,6 +308,7 @@ def ggpl_table_canteen_single_chair(dx, dy, dz):
         distance_chair += distance_chair / (number_chair - 1)
 
         x = [depth_chair, -distance_chair] * (int(number_chair) - 1)
+
         x.append(depth_chair)
 
         return [
@@ -450,19 +344,6 @@ def ggpl_table_canteen_single_chair(dx, dy, dz):
 
     return COLOR(intRGBColor([215, 190, 157]))(STRUCT(table))
 
-
-# ## Esempio
-
-# In[ ]:
-
-v = ggpl_table_canteen_single_chair(1, 1, 1)
-print SIZE([1, 2, 3])(v)
-VIEW(v)
-
-
-# # Tavolo da mensa con sedute girevoli
-
-# In[ ]:
 
 def ggpl_table_canteen_turning_chair(dx, dy, dz):
     depth_chair = 0.30 * dy
@@ -534,19 +415,6 @@ def ggpl_table_canteen_turning_chair(dx, dy, dz):
     return COLOR(intRGBColor([215, 190, 157]))(STRUCT(final))
 
 
-# ##  Esempio
-
-# In[ ]:
-
-v = ggpl_table_canteen_turning_chair(2, 2, 2)
-print SIZE([1, 2, 3])(v)
-VIEW(v)
-
-
-# # Mobiletto - Struttura base
-
-# In[2]:
-
 def ggpl_mobile_base(dx, dy, dz):
     depth_chair = 0.03 * dy
     feet = 0.05 * dz
@@ -596,9 +464,18 @@ def ggpl_mobile_base(dx, dy, dz):
     return STRUCT(final)
 
 
-# # Mobiletto con singolo cassetto
+def ggpl_mobile_single_drawer(dx, dy, dz):
+    mobile = ggpl_mobile_base(dx, dy, dz)
 
-# In[ ]:
+    def makeDrawer(dx, dy, dz):
+        return []
+
+    final = [mobile]
+    final.extend(makeDrawer(dx, dy, dz))
+
+    return STRUCT(final)
 
 
-
+v = ggpl_mobile_single_drawer(1, 1, 1)
+print SIZE([1, 2, 3])(v)
+VIEW(v)
