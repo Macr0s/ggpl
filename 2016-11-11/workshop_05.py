@@ -103,7 +103,6 @@ def ggpl_chair_with_arm(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_ch
 
 
 
-
 def ggpl_chair_with_desk(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
     chair = ggpl_chair_with_arm(dx, dy * 0.7, dz, depth_leg, distance_leg, depth_chair, height_leg)
 
@@ -183,7 +182,6 @@ def ggpl_table_with_chair(dx, dy, dz):
     ])
 
 
-
 def ggpl_table_with_chair_arm(dx, dy, dz):
     depth_leg = 0.05
     distance_leg = 0.03
@@ -217,7 +215,11 @@ def ggpl_table_canteen_base(dx, dy, dz):
             PROD([
                 PROD([
                     QUOTE([0, dx]),
-                    QUOTE([depth_leg, - (dy - depth_leg * 2), depth_leg])
+                    QUOTE([
+                        depth_leg,
+                        - dy + (depth_leg * 2),
+                        depth_leg
+                    ])
                 ]),
                 QUOTE([-heigth_leg, depth_leg])
             ]),
@@ -260,6 +262,18 @@ def ggpl_table_canteen(dx, dy, dz):
         return [
             PROD([
                 PROD([
+                    QUOTE([(dx - depth_leg) / 2, - depth_leg, (dx - depth_leg) / 2, 0]),
+                    QUOTE([
+                        - depth_chair + depth_leg,
+                        depth_leg,
+                        - dy + (depth_chair * 2),
+                        depth_leg,
+                    ])
+                ]),
+                QUOTE([-heigth_leg, depth_leg])
+            ]),
+            PROD([
+                PROD([
                     QUOTE([0, dx]),
                     QUOTE([depth_chair, - dy + depth_chair * 2, depth_chair])
                 ]),
@@ -294,6 +308,7 @@ def ggpl_table_canteen_single_chair(dx, dy, dz):
             number_chair -= 1
 
         distance_chair = (dx / number_chair) - depth_chair
+        distance_chair += distance_chair / (number_chair - 1)
 
         x = []
 
@@ -303,6 +318,18 @@ def ggpl_table_canteen_single_chair(dx, dy, dz):
                 x.append(-distance_chair)
 
         return [
+            PROD([
+                PROD([
+                    QUOTE([(dx - depth_leg) / 2, - depth_leg, (dx - depth_leg) / 2, 0]),
+                    QUOTE([
+                        - depth_chair + depth_leg ,
+                        depth_leg,
+                        - dy + (depth_chair * 2),
+                        depth_leg,
+                    ])
+                ]),
+                QUOTE([-heigth_leg, depth_leg])
+            ]),
             PROD([
                 PROD([
                     QUOTE(x),
@@ -331,8 +358,14 @@ def ggpl_table_canteen_turning_chair(dx, dy, dz):
     depth_table = 0.03 * dx
     depth_chair = 0.30 * dy
 
-    return table
+    def makeChair(dx, dy, dz):
+        return []
 
-v = ggpl_table_canteen_single_chair(1, 1, 1)
+
+    table.extend(makeChair(dx, dy, dz))
+
+    return COLOR(intRGBColor([215, 190, 157]))(STRUCT(table))
+
+v = ggpl_table_canteen_turning_chair(1, 1, 1)
 print SIZE([1, 2, 3])(v)
 VIEW(v)
