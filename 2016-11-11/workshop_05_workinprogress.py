@@ -464,18 +464,95 @@ def ggpl_mobile_base(dx, dy, dz):
     return STRUCT(final)
 
 
+def ggpl_mobile_drawer(dx, dy, dz):
+    depth_chair = 0.03 * dy
+    hole = 0.1 * dz
+    return COLOR(intRGBColor([215, 190, 157]))(STRUCT([
+        PROD([
+            PROD([
+                QUOTE([0, depth_chair, - dx + depth_chair * 2, depth_chair]),
+                QUOTE([dy, 0])
+            ]),
+            QUOTE([0, dz])
+        ]),
+        PROD([
+            PROD([
+                QUOTE([0, dx]),
+                QUOTE([- dy + depth_chair, depth_chair])
+            ]),
+            QUOTE([0, dz])
+        ]),
+        DIFF([
+            PROD([
+                PROD([
+                    QUOTE([dx / 2.0, dx / 2.0]),
+                    QUOTE([depth_chair / 2.0, depth_chair / 2.0])
+                ]),
+                QUOTE([dz / 2.0, dz / 2.0])
+            ]),
+            PROD([
+                PROD([
+                    QUOTE([- dx / 2.0 + hole / 2.0, hole]),
+                    QUOTE([depth_chair / 2.0, depth_chair / 2.0])
+                ]),
+                QUOTE([-dz + hole, hole])
+            ])
+        ]),
+        PROD([
+            PROD([
+                QUOTE([-depth_chair, dx - depth_chair * 2]),
+                QUOTE([-depth_chair, dy - depth_chair])
+            ]),
+            QUOTE([0, depth_chair])
+        ])
+    ]))
+
+
 def ggpl_mobile_single_drawer(dx, dy, dz):
+    depth_chair = 0.03 * dy
+    feet = 0.05 * dz
     mobile = ggpl_mobile_base(dx, dy, dz)
 
-    def makeDrawer(dx, dy, dz):
-        return []
-
     final = [mobile]
-    final.extend(makeDrawer(dx, dy, dz))
+    final.append(T([1,2,3])([depth_chair, 0, feet +depth_chair]))
+    final.append(ggpl_mobile_drawer(dx - depth_chair * 2, dy -depth_chair, +dz - feet - depth_chair * 2))
 
     return STRUCT(final)
 
 
-v = ggpl_mobile_single_drawer(1, 1, 1)
+def ggpl_mobile_double_drawer(dx, dy, dz):
+    depth_chair = 0.03 * dy
+    feet = 0.05 * dz
+    mobile = ggpl_mobile_base(dx, dy, dz)
+
+    final = [mobile]
+    final.append(T([1,2,3])([depth_chair, 0, feet +depth_chair]))
+    size = (+dz - feet - depth_chair * 2) / 2.0
+    final.append(ggpl_mobile_drawer(dx - depth_chair * 2, dy -depth_chair, size))
+    final.append(T(3)(size))
+    final.append(ggpl_mobile_drawer(dx - depth_chair * 2, dy -depth_chair, size))
+
+    return STRUCT(final)
+
+
+def ggpl_mobile_drawer_n(dx, dy, dz, n = 3):
+    depth_chair = 0.03 * dy
+    feet = 0.05 * dz
+    mobile = ggpl_mobile_base(dx, dy, dz)
+
+    final = [mobile]
+    final.append(T([1,2,3])([depth_chair, 0, feet +depth_chair]))
+    size = (+dz - feet - depth_chair * 2) / float(n)
+
+    final.extend([
+        ggpl_mobile_drawer(dx - depth_chair * 2, dy - depth_chair, size),
+        T(3)(size)
+    ] * (n - 1))
+    final.append(ggpl_mobile_drawer(dx - depth_chair * 2, dy -depth_chair, size))
+
+    return STRUCT(final)
+
+
+v = ggpl_mobile_drawer_n(1, 1, 1)
 print SIZE([1, 2, 3])(v)
 VIEW(v)
