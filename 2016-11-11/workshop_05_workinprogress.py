@@ -571,12 +571,73 @@ def ggpl_mobile_drawer_n(dx, dy, dz, n = 3):
 
 
 def ggpl_desk(dx, dy, dz):
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    depth_table = 0.05 * dz
+
     table = ggpl_table(dx, dy, dz)
 
+    def makePanel(dx, dy, dz):
+        return [
+            PROD([
+                PROD([
+                    QUOTE([-distance_leg,  depth_leg, - dx + distance_leg * 2 + depth_leg * 2, depth_leg]),
+                    QUOTE([-distance_leg - depth_leg, dy - distance_leg * 2 - depth_leg * 2])
+                ]),
+                QUOTE([-depth_leg, dz - depth_leg * 4])
+            ]),
+            PROD([
+                PROD([
+                    QUOTE([-distance_leg - depth_leg, dx - distance_leg * 2 - depth_leg * 2]),
+                    QUOTE([-dy + depth_leg + distance_leg, depth_leg])
+                ]),
+                QUOTE([-depth_leg, dz - depth_leg * 2 - depth_table])
+            ])
+        ]
+
+    final = [table]
+    final.extend(makePanel(dx, dy, dz))
+
+    return COLOR(intRGBColor([215, 190, 157]))(STRUCT(final))
+
+
+def ggpl_desk_mobile(dx, dy, dz, n = 3):
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    depth_table = 0.05 * dz
+
+    mobile = ggpl_mobile_drawer_n(dx * 0.25, dy - distance_leg - depth_leg, dz - depth_leg - depth_table - 0.1, n)
+    desk = ggpl_desk(dx, dy, dz)
+
     return STRUCT([
-        table
+        desk,
+        T(1)(dx * 0.75 - distance_leg - depth_leg),
+        mobile
     ])
 
-v = ggpl_desk(1, 1, 1)
+
+def ggpl_desk_mobile_chair(dx, dy, dz, n = 3):
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    depth_table = 0.05 * dz
+
+    mobile = ggpl_mobile_drawer_n(dx * 0.25, dy * 0.5 - distance_leg - depth_leg, dz - depth_leg - depth_table - 0.1, n)
+    desk = ggpl_desk(dx, dy, dz)
+    chair = STRUCT([
+        R([1, 2])(math.pi),
+        T([1, 2])([-dx * 0.25, -dy * 0.5]),
+        ggpl_chair_with_arm(dx * 0.25, dy * 0.5, dz)
+    ])
+
+    return STRUCT([
+        T(1)(dx *0.25),
+        chair,
+        T([1, 2])([-dx *0.25, dy * 0.5]),
+        desk,
+        T(1)(dx * 0.75 - distance_leg - depth_leg),
+        mobile
+    ])
+
+v = ggpl_desk_mobile_chair(2, 1, 1)
 print SIZE([1, 2, 3])(v)
 VIEW(v)

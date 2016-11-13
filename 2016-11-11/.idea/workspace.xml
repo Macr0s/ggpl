@@ -20,7 +20,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/16-11-11$workshop_05.coverage" NAME="workshop_05 Coverage Results" MODIFIED="1478956703668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../16-11-11" />
-    <SUITE FILE_PATH="coverage/2016-11-11$workshop_05.coverage" NAME="workshop_05 Coverage Results" MODIFIED="1479041362199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/2016-11-11$workshop_05.coverage" NAME="workshop_05 Coverage Results" MODIFIED="1479043192659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -41,8 +41,8 @@
       <file leaf-file-name="workshop_05_workinprogress.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workshop_05_workinprogress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-264">
-              <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="181" selection-end-column="7" />
+            <state relative-caret-position="381">
+              <caret line="640" column="0" selection-start-line="640" selection-start-column="0" selection-end-line="642" selection-end-column="7" />
               <folding>
                 <element signature="e#53#191#0" expanded="false" />
                 <element signature="e#226#1803#0" expanded="false" />
@@ -60,6 +60,7 @@
                 <element signature="e#16234#16540#0" expanded="false" />
                 <element signature="e#16590#17031#0" expanded="false" />
                 <element signature="e#17083#17548#0" expanded="false" />
+                <element signature="e#17582#18528#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -488,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479040767761</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Aggiornamento metodi base">
+      <created>1479041567356</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1479041567356</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -537,11 +545,12 @@
     <MESSAGE value="Correzione strutturale nei tavoli da mensa con sedia fissa" />
     <MESSAGE value="Aggiunta tavalo da mensa con sedia girevole" />
     <MESSAGE value="Aggiunta vari tipi di mobiletto co un numero variabile di cassetti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta vari tipi di mobiletto co un numero variabile di cassetti" />
+    <MESSAGE value="Aggiornamento metodi base" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiornamento metodi base" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -572,6 +581,7 @@
             <element signature="e#16234#16540#0" expanded="false" />
             <element signature="e#16590#17031#0" expanded="false" />
             <element signature="e#17083#17548#0" expanded="false" />
+            <element signature="e#17582#18528#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -615,6 +625,7 @@
             <element signature="e#16234#16540#0" expanded="false" />
             <element signature="e#16590#17031#0" expanded="false" />
             <element signature="e#17083#17548#0" expanded="false" />
+            <element signature="e#17582#18528#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -658,6 +669,7 @@
             <element signature="e#16234#16540#0" expanded="false" />
             <element signature="e#16590#17031#0" expanded="false" />
             <element signature="e#17083#17548#0" expanded="false" />
+            <element signature="e#17582#18528#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -708,6 +720,7 @@
             <element signature="e#16234#16540#0" expanded="false" />
             <element signature="e#16590#17031#0" expanded="false" />
             <element signature="e#17083#17548#0" expanded="false" />
+            <element signature="e#17582#18528#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -774,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/workshop_05_workinprogress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-264">
-          <caret line="139" column="0" selection-start-line="139" selection-start-column="0" selection-end-line="181" selection-end-column="7" />
+        <state relative-caret-position="381">
+          <caret line="640" column="0" selection-start-line="640" selection-start-column="0" selection-end-line="642" selection-end-column="7" />
           <folding>
             <element signature="e#53#191#0" expanded="false" />
             <element signature="e#226#1803#0" expanded="false" />
@@ -793,6 +806,7 @@
             <element signature="e#16234#16540#0" expanded="false" />
             <element signature="e#16590#17031#0" expanded="false" />
             <element signature="e#17083#17548#0" expanded="false" />
+            <element signature="e#17582#18528#0" expanded="false" />
           </folding>
         </state>
       </provider>
