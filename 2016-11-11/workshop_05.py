@@ -1,14 +1,14 @@
 
 # coding: utf-8
 
-# In[12]:
+# In[1]:
 
 from pyplasm import *
 
 
 # # Funziona base per i colori
 
-# In[13]:
+# In[2]:
 
 def intRGBColor(values):
     return Color4f([values[0] / 255.0,
@@ -19,9 +19,14 @@ def intRGBColor(values):
 
 # # Sedia
 
-# In[ ]:
+# In[7]:
 
-def ggpl_chair(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
+def ggpl_chair(dx, dy, dz):
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    depth_chair = 0.01 * dz
+    height_leg = 0.45 * dz
+
     def makeLeg(dx, dy, dz):
         def baseChair(dx, dy, dz):
             first = PROD([
@@ -66,7 +71,7 @@ def ggpl_chair(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01,
 
 # ## Esempio
 
-# In[ ]:
+# In[8]:
 
 v = ggpl_chair(0.40, 0.40, 0.9)
 print SIZE([1,2,3])(v)
@@ -75,10 +80,14 @@ VIEW(v)
 
 # # Sedia con Braccioli
 
-# In[ ]:
+# In[9]:
 
-def ggpl_chair_with_arm(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
-    chair = ggpl_chair(dx - depth_leg * 4, dy, dz, depth_leg, distance_leg, depth_chair, height_leg)
+def ggpl_chair_with_arm(dx, dy, dz):
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    height_leg = 0.45 * dz
+
+    chair = ggpl_chair(dx - depth_leg * 4, dy, dz)
 
     def makeArm(dx, dy, dz, right=True):
         def supportArm():
@@ -129,7 +138,7 @@ def ggpl_chair_with_arm(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_ch
 
 # ## Esempio
 
-# In[ ]:
+# In[10]:
 
 v = ggpl_chair_with_arm(0.40, 0.40, 0.9)
 print SIZE([1,2,3])(v)
@@ -138,10 +147,14 @@ VIEW(v)
 
 # # Sedia con tavolino
 
-# In[ ]:
+# In[11]:
 
-def ggpl_chair_with_desk(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
-    chair = ggpl_chair_with_arm(dx, dy * 0.7, dz, depth_leg, distance_leg, depth_chair, height_leg)
+def ggpl_chair_with_desk(dx, dy, dz):
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    height_leg = 0.45 * dz
+
+    chair = ggpl_chair_with_arm(dx, dy * 0.7, dz)
 
     def makeDesk(dx, dy, dz):
         return STRUCT([
@@ -165,7 +178,7 @@ def ggpl_chair_with_desk(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_c
 
 # ## Esempio
 
-# In[ ]:
+# In[12]:
 
 v = ggpl_chair_with_desk(0.40, 0.40, 0.9)
 print SIZE([1,2,3])(v)
@@ -174,9 +187,13 @@ VIEW(v)
 
 # # Tavolo
 
-# In[ ]:
+# In[13]:
 
-def ggpl_table(dx, dy, dz, depth_leg=0.05, distance_leg=0.03, depth_table=0.05):
+def ggpl_table(dx, dy, dz):
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    depth_table = 0.05 * dz
+
     def makeLeg(dx, dy, dz):
         def baseChair(dx, dy, dz):
             first = PROD([
@@ -219,7 +236,7 @@ def ggpl_table(dx, dy, dz, depth_leg=0.05, distance_leg=0.03, depth_table=0.05):
 
 # # Esempio
 
-# In[ ]:
+# In[14]:
 
 v = ggpl_table(0.60, 1, 1)
 print SIZE([1,2,3])(v)
@@ -744,4 +761,11 @@ VIEW(v)
 v = ggpl_mobile_drawer_n(1, 1, 1, 10)
 print SIZE([1, 2, 3])(v)
 VIEW(v)
+
+
+# # Scrivania
+
+# In[ ]:
+
+
 

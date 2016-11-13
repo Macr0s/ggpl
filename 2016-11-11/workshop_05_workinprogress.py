@@ -8,7 +8,12 @@ def intRGBColor(values):
                     1.0])
 
 
-def ggpl_chair(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
+def ggpl_chair(dx, dy, dz):
+    depth_leg = 0.015 * dx
+    distance_leg = 0.03 * dx
+    depth_chair = 0.01 * dz
+    height_leg = 0.45 * dz
+
     def makeLeg(dx, dy, dz):
         def baseChair(dx, dy, dz):
             first = PROD([
@@ -51,8 +56,12 @@ def ggpl_chair(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01,
     ])
 
 
-def ggpl_chair_with_arm(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
-    chair = ggpl_chair(dx - depth_leg * 4, dy, dz, depth_leg, distance_leg, depth_chair, height_leg)
+def ggpl_chair_with_arm(dx, dy, dz):
+    depth_leg = 0.015 * dx
+    distance_leg = 0.03 * dx
+    height_leg = 0.45 * dz
+
+    chair = ggpl_chair(dx - depth_leg * 4, dy, dz)
 
     def makeArm(dx, dy, dz, right=True):
         def supportArm():
@@ -101,8 +110,12 @@ def ggpl_chair_with_arm(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_ch
     ])
 
 
-def ggpl_chair_with_desk(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_chair=0.01, height_leg=0.45):
-    chair = ggpl_chair_with_arm(dx, dy * 0.7, dz, depth_leg, distance_leg, depth_chair, height_leg)
+def ggpl_chair_with_desk(dx, dy, dz):
+    depth_leg = 0.015 * dx
+    distance_leg = 0.03 * dx
+    height_leg = 0.45 * dz
+
+    chair = ggpl_chair_with_arm(dx, dy * 0.7, dz)
 
     def makeDesk(dx, dy, dz):
         return STRUCT([
@@ -124,7 +137,11 @@ def ggpl_chair_with_desk(dx, dy, dz, depth_leg=0.015, distance_leg=0.03, depth_c
     ])
 
 
-def ggpl_table(dx, dy, dz, depth_leg=0.05, distance_leg=0.03, depth_table=0.05):
+def ggpl_table(dx, dy, dz):
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    depth_table = 0.05 * dz
+
     def makeLeg(dx, dy, dz):
         def baseChair(dx, dy, dz):
             first = PROD([
@@ -166,9 +183,9 @@ def ggpl_table(dx, dy, dz, depth_leg=0.05, distance_leg=0.03, depth_table=0.05):
 
 
 def ggpl_table_with_chair(dx, dy, dz):
-    depth_leg = 0.05
-    distance_leg = 0.03
-    table = ggpl_table(dx, dy * 0.5, dz * 0.8, depth_leg, distance_leg)
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    table = ggpl_table(dx, dy * 0.5, dz * 0.8)
     chair = ggpl_chair(dx - (depth_leg * 2 + distance_leg * 2 + 0.02), dy * 0.5, dz, depth_leg)
 
     return STRUCT([
@@ -179,10 +196,10 @@ def ggpl_table_with_chair(dx, dy, dz):
 
 
 def ggpl_table_with_chair_arm(dx, dy, dz):
-    depth_leg = 0.05
-    distance_leg = 0.03
-    table = ggpl_table(dx, dy * 0.5, dz * 0.8, depth_leg, distance_leg)
-    chair = ggpl_chair_with_arm(dx - (depth_leg * 2 + distance_leg * 2 + 0.02), dy * 0.5, dz, depth_leg)
+    depth_leg = 0.05 * dx
+    distance_leg = 0.03 * dx
+    table = ggpl_table(dx, dy * 0.5, dz * 0.8)
+    chair = ggpl_chair_with_arm(dx - (depth_leg * 2 + distance_leg * 2 + 0.02), dy * 0.5, dz)
 
     return STRUCT([
         table,
@@ -553,6 +570,13 @@ def ggpl_mobile_drawer_n(dx, dy, dz, n = 3):
     return STRUCT(final)
 
 
-v = ggpl_mobile_drawer_n(1, 1, 1)
+def ggpl_desk(dx, dy, dz):
+    table = ggpl_table(dx, dy, dz)
+
+    return STRUCT([
+        table
+    ])
+
+v = ggpl_desk(1, 1, 1)
 print SIZE([1, 2, 3])(v)
 VIEW(v)
