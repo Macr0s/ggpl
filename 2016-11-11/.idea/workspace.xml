@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="712380fd-6b02-4356-b271-b649488390cb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/workshop_05-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/workshop_05-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_05.ipynb" afterPath="$PROJECT_DIR$/workshop_05.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_05.py" afterPath="$PROJECT_DIR$/workshop_05.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_05_workinprogress.py" afterPath="$PROJECT_DIR$/workshop_05_workinprogress.py" />
     </list>
     <ignored path="16-11-11.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -496,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479041567356</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Aggiunto ultimo metodo per la creazione di una scrivania completa con cassetto">
+      <created>1479043290371</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1479043290371</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -546,7 +550,8 @@
     <MESSAGE value="Aggiunta tavalo da mensa con sedia girevole" />
     <MESSAGE value="Aggiunta vari tipi di mobiletto co un numero variabile di cassetti" />
     <MESSAGE value="Aggiornamento metodi base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiornamento metodi base" />
+    <MESSAGE value="Aggiunto ultimo metodo per la creazione di una scrivania completa con cassetto" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiunto ultimo metodo per la creazione di una scrivania completa con cassetto" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
