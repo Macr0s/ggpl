@@ -10,7 +10,15 @@ from pyplasm import *
 
 # In[2]:
 
+
 def intRGBColor(values):
+    """ intRGBColor
+
+    Metodo preso dal web per ottenere colori da RGB
+    :param values: lista di tre interi RGB
+    :return: Colore
+    """
+
     return Color4f([values[0] / 255.0,
                     values[1] / 255.0,
                     values[2] / 255.0,
@@ -21,14 +29,52 @@ def intRGBColor(values):
 
 # In[7]:
 
+
 def ggpl_chair(dx, dy, dz):
+    """ ggpl_chair
+
+    Metodo per la creazione di una sedia
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hpc della sedia
+    """
+
+    #: Larghezza della gamba della sedia
     depth_leg = 0.05 * dx
+
+    #: Distance della gamba dal bordo della sedia
     distance_leg = 0.03 * dx
+
+    #: Profondità del sedile della sedia
     depth_chair = 0.01 * dz
+
+    #: Altezza delle cambe della sedia
     height_leg = 0.45 * dz
 
     def makeLeg(dx, dy, dz):
+        """ makeLeg
+
+        Metodo che crea le gambe della sedia
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hpc delle gambe della sedia
+        """
+
         def baseChair(dx, dy, dz):
+            """ baseChair
+
+            Metodo che crea la struttura sotto il sedile della sedia
+            :param dx: occupazione della struttura nelle x
+            :param dy: occupazione della struttura nelle y
+            :param dz: occupazione della struttura nelle z
+            :return: hpc
+            """
+
+            #: Struttura esterna della struttura a contatto con il sedile
             first = PROD([
                 PROD([
                     QUOTE([-distance_leg, dx - distance_leg * 2]),
@@ -36,6 +82,8 @@ def ggpl_chair(dx, dy, dz):
                 ]),
                 QUOTE([- dz + depth_leg, depth_leg])
             ])
+
+            #: Struttura interna della struttura a contatto con il sedile
             second = PROD([
                 PROD([
                     QUOTE([-distance_leg - depth_leg, dx - distance_leg * 2 - depth_leg * 2]),
@@ -48,8 +96,13 @@ def ggpl_chair(dx, dy, dz):
                 first, second
             ])
 
+        #: Proiezione della gambe sull'asse x
         base_x = QUOTE([-distance_leg, depth_leg, - (dx - distance_leg * 2 - depth_leg * 2), depth_leg])
+
+        #: Proiezione della gambe sull'asse y
         base_y = QUOTE([-distance_leg, depth_leg, - (dy - distance_leg * 2 - depth_leg * 2), depth_leg])
+
+        #: Proiezione della gambe sull'asse z
         base_z = QUOTE([dz - depth_leg])
 
         return STRUCT([
@@ -82,14 +135,40 @@ VIEW(v)
 
 # In[9]:
 
+
 def ggpl_chair_with_arm(dx, dy, dz):
+    """ ggpl_chair_with_arm
+
+    Metodo per la creazione della sedia con i braccioli
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hpc della sedia con i braccioli
+    """
+
+    #: Larghezza della gamba della sedia
     depth_leg = 0.05 * dx
+
+    #: Distance della gamba dal bordo della sedia
     distance_leg = 0.03 * dx
+
+    #: Altezza delle cambe della sedia
     height_leg = 0.45 * dz
 
+    #: Sedia senza braccioli
     chair = ggpl_chair(dx - depth_leg * 4, dy, dz)
 
     def makeArm(dx, dy, dz, right=True):
+        """ makeArm
+        
+        Metodo per la creazione dei braccioli della sedia
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :param right: Parametro opzionale per indicare se si tratta il bracciolo sinistro o quello destro
+        :return: hpc del bracciolo
+        """
         def supportArm():
             return COLOR(BLACK)(STRUCT([
                 T([2,3])([distance_leg,height_leg - depth_leg]),
@@ -149,9 +228,19 @@ VIEW(v)
 
 # In[11]:
 
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_chair_with_desk(dx, dy, dz):
+    #: Larghezza della gamba della sedia
     depth_leg = 0.05 * dx
+
+    #: Distance della gamba dal bordo della sedia
     distance_leg = 0.03 * dx
+
+    #: Altezza delle cambe della sedia
     height_leg = 0.45 * dz
 
     chair = ggpl_chair_with_arm(dx, dy * 0.7, dz)
@@ -189,9 +278,18 @@ VIEW(v)
 
 # In[13]:
 
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_table(dx, dy, dz):
+    #: Larghezza della gamba del tevolo
     depth_leg = 0.05 * dx
+
+    #: Distance della gamba dal bordo del tavolo
     distance_leg = 0.03 * dx
+
     depth_table = 0.05 * dz
 
     def makeLeg(dx, dy, dz):
@@ -247,6 +345,11 @@ VIEW(v)
 
 # In[ ]:
 
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_table_with_chair(dx, dy, dz):
     depth_leg = 0.05
     distance_leg = 0.03
@@ -273,6 +376,11 @@ VIEW(v)
 
 # In[ ]:
 
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_table_with_chair_arm(dx, dy, dz):
     depth_leg = 0.05
     distance_leg = 0.03
@@ -299,6 +407,12 @@ VIEW(v)
 
 # In[ ]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_table_canteen_base(dx, dy, dz):
     depth_leg = 0.030 * dx
     heigth_leg = 0.45 * dz - depth_leg
@@ -360,6 +474,12 @@ def ggpl_table_canteen_base(dx, dy, dz):
 
 # In[ ]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_table_canteen(dx, dy, dz):
     depth_leg = 0.030 * dx
     heigth_leg = 0.45 * dz - depth_leg
@@ -415,6 +535,12 @@ VIEW(v)
 
 # In[ ]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_table_canteen_single_chair(dx, dy, dz):
     table = ggpl_table_canteen_base(dx, dy, dz)
     depth_leg = 0.030 * dx
@@ -481,6 +607,12 @@ VIEW(v)
 
 # In[ ]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_table_canteen_turning_chair(dx, dy, dz):
     depth_chair = 0.30 * dy
     depth_leg = 0.030 * dx
@@ -562,8 +694,14 @@ VIEW(v)
 
 # # Mobiletto - Struttura base
 
-# In[14]:
+# In[24]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_mobile_base(dx, dy, dz):
     depth_chair = 0.03 * dy
     feet = 0.05 * dz
@@ -615,8 +753,14 @@ def ggpl_mobile_base(dx, dy, dz):
 
 # # Cassetto per mobili
 
-# In[15]:
+# In[25]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_mobile_drawer(dx, dy, dz):
     depth_chair = 0.03 * dy
     hole = 0.1 * dz
@@ -665,6 +809,12 @@ def ggpl_mobile_drawer(dx, dy, dz):
 
 # In[16]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_mobile_single_drawer(dx, dy, dz):
     depth_chair = 0.03 * dy
     feet = 0.05 * dz
@@ -690,6 +840,12 @@ VIEW(v)
 
 # In[18]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_mobile_double_drawer(dx, dy, dz):
     depth_chair = 0.03 * dy
     feet = 0.05 * dz
@@ -716,8 +872,14 @@ VIEW(v)
 
 # # Mobiletto con n-cassetto
 
-# In[20]:
+# In[22]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_mobile_drawer_n(dx, dy, dz, n = 3):
     depth_chair = 0.03 * dy
     feet = 0.05 * dz
@@ -738,7 +900,7 @@ def ggpl_mobile_drawer_n(dx, dy, dz, n = 3):
 
 # ## Esempio 1
 
-# In[21]:
+# In[26]:
 
 v = ggpl_mobile_drawer_n(1, 1, 1)
 print SIZE([1, 2, 3])(v)
@@ -765,8 +927,14 @@ VIEW(v)
 
 # # Scrivania
 
-# In[15]:
+# In[18]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_desk(dx, dy, dz):
     depth_leg = 0.05 * dx
     distance_leg = 0.03 * dx
@@ -800,7 +968,7 @@ def ggpl_desk(dx, dy, dz):
 
 # ## Esempio
 
-# In[ ]:
+# In[19]:
 
 v = ggpl_desk(2, 1, 1)
 print SIZE([1, 2, 3])(v)
@@ -809,8 +977,14 @@ VIEW(v)
 
 # # Scrivania con cassettiera
 
-# In[16]:
+# In[20]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_desk_mobile(dx, dy, dz, n = 3):
     depth_leg = 0.05 * dx
     distance_leg = 0.03 * dx
@@ -828,7 +1002,7 @@ def ggpl_desk_mobile(dx, dy, dz, n = 3):
 
 # ## Esempio
 
-# In[ ]:
+# In[27]:
 
 v = ggpl_desk_mobile(2, 1, 1)
 print SIZE([1, 2, 3])(v)
@@ -837,8 +1011,14 @@ VIEW(v)
 
 # # Scrivania completta con cassettiera
 
-# In[17]:
+# In[28]:
 
+
+"""
+:param dx: occupazione della struttura nelle x
+:param dy: occupazione della struttura nelle y
+:param dz: occupazione della struttura nelle z
+"""
 def ggpl_desk_mobile_chair(dx, dy, dz, n = 3):
     depth_leg = 0.05 * dx
     distance_leg = 0.03 * dx
@@ -864,9 +1044,14 @@ def ggpl_desk_mobile_chair(dx, dy, dz, n = 3):
 
 # ## Esempio
 
-# In[ ]:
+# In[29]:
 
 v = ggpl_desk_mobile_chair(2, 1, 1)
 print SIZE([1, 2, 3])(v)
 VIEW(v)
+
+
+# In[ ]:
+
+
 

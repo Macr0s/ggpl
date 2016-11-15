@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="712380fd-6b02-4356-b271-b649488390cb" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_05.ipynb" afterPath="$PROJECT_DIR$/workshop_05.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_05.py" afterPath="$PROJECT_DIR$/workshop_05.py" />
     </list>
     <ignored path="16-11-11.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,7 +17,8 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/16-11-11$workshop_05.coverage" NAME="workshop_05 Coverage Results" MODIFIED="1478956703668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../16-11-11" />
-    <SUITE FILE_PATH="coverage/2016-11-11$workshop_05.coverage" NAME="workshop_05 Coverage Results" MODIFIED="1479043192659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/2016-11-11$workshop_05.coverage" NAME="workshop_05 Coverage Results" MODIFIED="1479191321649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/2016-11-11$workshop_05__1_.coverage" NAME="workshop_05 (1) Coverage Results" MODIFIED="1479191331174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -35,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="workshop_05_workinprogress.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="workshop_05_workinprogress.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/workshop_05_workinprogress.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="637" column="14" selection-start-line="637" selection-start-column="14" selection-end-line="637" selection-end-column="14" />
+            <state relative-caret-position="30">
+              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding>
                 <element signature="e#53#191#0" expanded="false" />
                 <element signature="e#226#1803#0" expanded="false" />
@@ -63,6 +64,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="workshop_05.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/workshop_05.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="169" column="34" selection-start-line="169" selection-start-column="34" selection-end-line="169" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="type1.png" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/images/type1.png">
           <provider selected="true" editor-type-id="images">
@@ -73,7 +84,7 @@
       <file leaf-file-name="fenvs.py" pinned="false" current-in-tab="false">
         <entry file="file:///Library/Python/2.7/site-packages/pyplasm/fenvs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="18225">
               <caret line="1215" column="14" selection-start-line="1215" selection-start-column="4" selection-end-line="1215" selection-end-column="14" />
               <folding />
             </state>
@@ -98,8 +109,8 @@
       <list>
         <option value="$PROJECT_DIR$/../16-11-11/workshop_05.ipynb" />
         <option value="$PROJECT_DIR$/../16-11-11/workshop_05.py" />
-        <option value="$PROJECT_DIR$/workshop_05.py" />
         <option value="$PROJECT_DIR$/workshop_05_workinprogress.py" />
+        <option value="$PROJECT_DIR$/workshop_05.py" />
       </list>
     </option>
   </component>
@@ -110,9 +121,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="13" />
     <option name="width" value="1440" />
-    <option name="height" value="874" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -139,8 +149,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -161,6 +169,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -169,7 +179,7 @@
     <property name="FullScreen" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.workshop_05">
+  <component name="RunManager" selected="Python.workshop_05 (1)">
     <configuration default="false" name="workshop_05" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -184,6 +194,24 @@
       <module name="16-11-11" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workshop_05_workinprogress.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="workshop_05 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="16-11-11" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/workshop_05.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -396,12 +424,14 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Python.workshop_05" />
+      <item index="1" class="java.lang.String" itemvalue="Python.workshop_05 (1)" />
     </list>
     <recent_temporary>
-      <list size="1">
-        <item index="0" class="java.lang.String" itemvalue="Python.workshop_05" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.workshop_05 (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.workshop_05" />
       </list>
     </recent_temporary>
   </component>
@@ -507,20 +537,27 @@
       <option name="project" value="LOCAL" />
       <updated>1479043418162</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Test sul workshop">
+      <created>1479043450831</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1479043450831</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="13" width="1440" height="874" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2639485" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26752505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5028612" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992327" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3084577" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30843374" sideWeight="0.49713877" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -568,6 +605,50 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/images/type 2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workshop_05_workinprogress.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#53#191#0" expanded="false" />
+            <element signature="e#226#1803#0" expanded="false" />
+            <element signature="e#1847#3449#0" expanded="false" />
+            <element signature="e#3494#4223#0" expanded="false" />
+            <element signature="e#4258#5670#0" expanded="false" />
+            <element signature="e#5716#6029#0" expanded="false" />
+            <element signature="e#6079#6390#0" expanded="false" />
+            <element signature="e#6438#8162#0" expanded="false" />
+            <element signature="e#8205#9523#0" expanded="false" />
+            <element signature="e#9579#11227#0" expanded="false" />
+            <element signature="e#11284#13468#0" expanded="false" />
+            <element signature="e#13509#14935#0" expanded="false" />
+            <element signature="e#14978#16184#0" expanded="false" />
+            <element signature="e#16234#16540#0" expanded="false" />
+            <element signature="e#16590#17031#0" expanded="false" />
+            <element signature="e#17083#17548#0" expanded="false" />
+            <element signature="e#17582#18528#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/type1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/pyplasm/fenvs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18225">
+          <caret line="1215" column="14" selection-start-line="1215" selection-start-column="4" selection-end-line="1215" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/images/type 2.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -776,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1426">
           <caret line="3095" column="17" selection-start-line="3095" selection-start-column="17" selection-end-line="3095" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,7 +872,7 @@
     </entry>
     <entry file="file:///Library/Python/2.7/site-packages/pyplasm/fenvs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="18225">
           <caret line="1215" column="14" selection-start-line="1215" selection-start-column="4" selection-end-line="1215" selection-end-column="14" />
           <folding />
         </state>
@@ -800,8 +880,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/workshop_05_workinprogress.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="637" column="14" selection-start-line="637" selection-start-column="14" selection-end-line="637" selection-end-column="14" />
+        <state relative-caret-position="30">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding>
             <element signature="e#53#191#0" expanded="false" />
             <element signature="e#226#1803#0" expanded="false" />
@@ -821,6 +901,14 @@
             <element signature="e#17083#17548#0" expanded="false" />
             <element signature="e#17582#18528#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workshop_05.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="169" column="34" selection-start-line="169" selection-start-column="34" selection-end-line="169" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
