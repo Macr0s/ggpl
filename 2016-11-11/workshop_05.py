@@ -302,22 +302,47 @@ VIEW(v)
 
 # In[13]:
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
 def ggpl_table(dx, dy, dz):
+    """ ggpl_table
+
+    Metodo di creazione di un tavolo
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hcp del tavolo
+    """
+
     #: Larghezza della gamba del tevolo
     depth_leg = 0.05 * dx
 
     #: Distance della gamba dal bordo del tavolo
     distance_leg = 0.03 * dx
 
+    #: Stessore del tavoro
     depth_table = 0.05 * dz
 
     def makeLeg(dx, dy, dz):
-        def baseChair(dx, dy, dz):
+        """ makeLeg
+
+        Metodo che crea le gambe del tavolo
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hcp delle gambe del tavolo
+        """
+        def baseTable(dx, dy, dz):
+            """ baseTable
+
+            Metodo che crea la struttura sotto la superficie del tavolo
+            :param dx: occupazione della struttura nelle x
+            :param dy: occupazione della struttura nelle y
+            :param dz: occupazione della struttura nelle z
+            :return: hpc
+            """
+
+            #: Struttura esterna della struttura a contatto con la superficie del tavolo
             first = PROD([
                 PROD([
                     QUOTE([-distance_leg, dx - distance_leg * 2]),
@@ -325,6 +350,8 @@ def ggpl_table(dx, dy, dz):
                 ]),
                 QUOTE([- dz + depth_leg, depth_leg])
             ])
+
+            #: Struttura interna della struttura a contatto con la superficie del tavolo
             second = PROD([
                 PROD([
                     QUOTE([-distance_leg - depth_leg, dx - distance_leg * 2 - depth_leg * 2]),
@@ -337,8 +364,11 @@ def ggpl_table(dx, dy, dz):
                 first, second
             ])
 
+        #: Proiezione della gambe sull'asse x
         base_x = QUOTE([-distance_leg, depth_leg, - (dx - distance_leg * 2 - depth_leg * 2), depth_leg])
+        #: Proiezione della gambe sull'asse y
         base_y = QUOTE([-distance_leg, depth_leg, - (dy - distance_leg * 2 - depth_leg * 2), depth_leg])
+        #: Proiezione della gambe sull'asse z
         base_z = QUOTE([dz - depth_leg])
 
         return STRUCT([
@@ -346,7 +376,7 @@ def ggpl_table(dx, dy, dz):
                 PROD([base_x, base_y]),
                 base_z
             ]),
-            baseChair(dx, dy, dz)
+            baseTable(dx, dy, dz)
         ])
 
     return COLOR(intRGBColor([215, 190, 157]))(STRUCT([
@@ -369,16 +399,29 @@ VIEW(v)
 
 # In[ ]:
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
+
 def ggpl_table_with_chair(dx, dy, dz):
-    depth_leg = 0.05
-    distance_leg = 0.03
-    table = ggpl_table(dx, dy * 0.5, dz * 0.8, depth_leg, distance_leg)
-    chair = ggpl_chair(dx - (depth_leg * 2 + distance_leg * 2 + 0.02), dy * 0.5, dz, depth_leg)
+    """ ggpl_table_with_chair
+
+    Metodo per la creazione di un tavolo con una sedia
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hcp del tavolo con la sedia
+    """
+
+    #: Larghezza della gamba del tavolo
+    depth_leg = 0.05 * dx
+
+    #: Distance della gamba dal bordo del tavolo
+    distance_leg = 0.03 * dx
+
+    #: il tavolo
+    table = ggpl_table(dx, dy * 0.5, dz * 0.8)
+
+    #: la sedia
+    chair = ggpl_chair(dx - (depth_leg * 2 + distance_leg * 2 + 0.02), dy * 0.5, dz)
 
     return STRUCT([
         table,
@@ -400,16 +443,29 @@ VIEW(v)
 
 # In[ ]:
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
+
 def ggpl_table_with_chair_arm(dx, dy, dz):
-    depth_leg = 0.05
-    distance_leg = 0.03
-    table = ggpl_table(dx, dy * 0.5, dz * 0.8, depth_leg, distance_leg)
-    chair = ggpl_chair_with_arm(dx - (depth_leg * 2 + distance_leg * 2 + 0.02), dy * 0.5, dz, depth_leg)
+    """ ggpl_table_with_chair_arm
+
+    Metodo per la creazione di una sedia con i braccioli
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hcp del tavolo
+    """
+
+    #: Larghezza della gamba del tevolo
+    depth_leg = 0.05 * dx
+
+    #: Distance della gamba dal bordo del tavolo
+    distance_leg = 0.03 * dx
+
+    #: Il tavolo
+    table = ggpl_table(dx, dy * 0.5, dz * 0.8)
+
+    #: La sedia
+    chair = ggpl_chair_with_arm(dx - (depth_leg * 2 + distance_leg * 2 + 0.02), dy * 0.5, dz)
 
     return STRUCT([
         table,
@@ -432,18 +488,41 @@ VIEW(v)
 # In[ ]:
 
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
+
 def ggpl_table_canteen_base(dx, dy, dz):
+    """ ggpl_table_canteen_base
+
+    Metodo per la crezione della struttura base di un tavolo da mensa
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hcp del tavolo
+    """
+
+    #: La grandezza delle gambe del tavolo
     depth_leg = 0.030 * dx
+
+    #: L'altezza delle gambe del tavolo
     heigth_leg = 0.45 * dz - depth_leg
+
+    #: La profondità della superficie del tavolo
     depth_table = 0.03 * dx
+
+    #: La profondità della sedia
     depth_chair = 0.30 * dy
 
     def makeLeg(dx, dy, dz):
+        """ makeLeg
+
+        Metodo per la creazione gelle gambe del tavolo
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hcp delle gambe del tavolo
+        """
+
         return PROD([
             PROD([
                 QUOTE([depth_leg, - (dx - depth_leg * 2), depth_leg]),
@@ -453,6 +532,16 @@ def ggpl_table_canteen_base(dx, dy, dz):
         ])
 
     def makeStruct(dx, dy, dz):
+        """ makeStruct
+
+        Metodo per la creazione della struttura portante del tavolo
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hcp delle struttura portante del tavolo
+        """
+
         return [
             PROD([
                 PROD([
@@ -488,6 +577,7 @@ def ggpl_table_canteen_base(dx, dy, dz):
             ])
         ]
 
+    #: Struttura finale del tavolo
     final = [makeLeg(dx,dy, dz)]
     final.extend(makeStruct(dx, dy, dz))
 
@@ -499,18 +589,40 @@ def ggpl_table_canteen_base(dx, dy, dz):
 # In[ ]:
 
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
 def ggpl_table_canteen(dx, dy, dz):
+    """ ggpl_table_canteen
+
+    Metodo per la creazione di un tavolo da mensa con seduta unica
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hcp del tavolo da mensa
+    """
+
+    #: La grandezza delle gambe del tavolo
     depth_leg = 0.030 * dx
+
+    #: L'altezza delle gambe del tavolo
     heigth_leg = 0.45 * dz - depth_leg
+
+    #: La profondità della superficie del tavolo
     depth_table = 0.03 * dx
+
+    #: La profondità della sedia
     depth_chair = 0.30 * dy
 
     def makeChair(dx, dy, dz):
+        """ makeChair
+
+        Metodo per la creazione delle sedie del tavolo
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hcp della sedia
+        """
+
         return [
             PROD([
                 PROD([
@@ -540,6 +652,7 @@ def ggpl_table_canteen(dx, dy, dz):
             ])
         ]
 
+    #: Struttura finale del tavolo
     final = ggpl_table_canteen_base(dx, dy, dz)
     final.extend(makeChair(dx, dy, dz))
 
@@ -560,27 +673,54 @@ VIEW(v)
 # In[ ]:
 
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
 def ggpl_table_canteen_single_chair(dx, dy, dz):
+    """ ggpl_table_canteen_single_chair
+
+    Metodo per la creazione di un tavolo da mensa con seduta separata
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hcp del tavolo da mensa
+    """
+
+    #: Il tavolo
     table = ggpl_table_canteen_base(dx, dy, dz)
+
+    #: La grandezza delle gambe del tavolo
     depth_leg = 0.030 * dx
+
+    #: L'altezza delle gambe del tavolo
     heigth_leg = 0.45 * dz - depth_leg
+
+    #: La profondità della superficie del tavolo
     depth_table = 0.03 * dx
+
+    #: La profondità della sedia
     depth_chair = 0.30 * dy
 
     def makeChair(dx, dy, dz):
+        """ makeChair
+
+        Metodo per la creazione delle sedie del tavolo
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hcp della sedia
+        """
+
+        #: Il numero di sedie per lato del tavolo
         number_chair = math.floor(dx / depth_chair)
 
         if number_chair % 2 == 0:
             number_chair -= 1
 
+        #: La distanza tra una sedia e l'altra
         distance_chair = (dx / number_chair) - depth_chair
         distance_chair += distance_chair / (number_chair - 1)
 
+        #: Struttura finale delle sedie
         x = [depth_chair, -distance_chair] * (int(number_chair) - 1)
         x.append(depth_chair)
 
@@ -632,18 +772,37 @@ VIEW(v)
 # In[ ]:
 
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
 def ggpl_table_canteen_turning_chair(dx, dy, dz):
-    depth_chair = 0.30 * dy
+    """ ggpl_table_canteen_single_chair
+
+    Metodo per la creazione di un tavolo da mensa con seduta separata
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hcp del tavolo da mensa
+    """
+
+    #: La grandezza delle gambe del tavolo
     depth_leg = 0.030 * dx
+
+    #: L'altezza delle gambe del tavolo
     heigth_leg = 0.45 * dz - depth_leg
+
+    #: La profondità della superficie del tavolo
     depth_table = 0.03 * dx
 
+    #: La profondità della sedia
+    depth_chair = 0.30 * dy
+
     def makeDisk():
+        """ makeDisk
+
+        Metodo che crea il perno di rotazione della sedia
+
+        :return: hpc
+        """
+
         def disk2D(p):
             u, v = p
             return [v * COS(u), v * SIN(u)]
@@ -659,20 +818,42 @@ def ggpl_table_canteen_turning_chair(dx, dy, dz):
         ])
 
     def makeChair(dx, dy, dz):
+        """ makeChair
+
+        Metodo per la creazione delle sedie del tavolo
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hcp della sedia
+        """
+
+        #: Il numero di sedie per lato del tavolo
         number_chair = math.floor(dx / depth_chair)
 
         if number_chair % 2 == 0:
             number_chair -= 1
 
+        #: La distanza tra una sedia e l'altra
         distance_chair = (dx / number_chair) - depth_chair
         distance_chair += distance_chair / (number_chair - 1)
 
+        #: Struttura finale delle sedie
         x = [depth_chair, -distance_chair] * (int(number_chair) - 1)
         x.append(depth_chair)
 
         def makeGroupDisk():
+            """ makeGroupDisk
+
+            Metodo per la creazione di tutti i perni insieme
+
+            :return: hpc
+            """
+
+            #: Primo perno
             first = STRUCT([makeDisk(), T(1)(depth_chair + distance_chair)] * int(number_chair))
 
+            #: Altri perni
             final = [T(2)(dy - depth_chair - depth_leg)]
             final.extend([makeDisk(), T(1)(depth_chair + distance_chair)] * int(number_chair))
 
@@ -699,8 +880,11 @@ def ggpl_table_canteen_turning_chair(dx, dy, dz):
             ])
         ]
 
+    #: Struttura finale delle sedie
     final = makeChair(dx, dy, dz)
     final.append(T(2)(depth_chair / 2.0))
+
+    #: Il tavolo
     table = ggpl_table_canteen_base(dx, dy - depth_chair, dz)
     final.extend(table)
 
@@ -721,18 +905,39 @@ VIEW(v)
 # In[24]:
 
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
 def ggpl_mobile_base(dx, dy, dz):
+    """ ggpl_mobile_base
+
+    Metodo per la creazione base del mobiletto
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hpc del mobiletto
+    """
+
+    #: Profondità delle pareti del mobiletto
     depth_chair = 0.03 * dy
+
+    #: Altezza dei piedi del mobiletto
     feet = 0.05 * dz
+
+    #: Distance dei piedi del mobiletto dal bordo
     distance_leg = 0.03 * dx
+
+    #: Larghezza dei piedi del mobiletto
     depth_leg = 0.05 * dx
 
     def makeWall(dx, dy, dz):
+        """ makeWall
+
+        Metodo che crea le pareti del mobiletto
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hpc delle pareti del mobiletto
+        """
         return [
             PROD([
                 PROD([
@@ -758,6 +963,15 @@ def ggpl_mobile_base(dx, dy, dz):
         ]
 
     def makeFeet(dx, dy, dz):
+        """ makeWall
+
+        Metodo che crea i piedi del mobiletto
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hpc dei piedi del mobiletto
+        """
         return [
             PROD([
                 PROD([
@@ -768,6 +982,7 @@ def ggpl_mobile_base(dx, dy, dz):
             ])
         ]
 
+    #: Struttura finale del mobiletto
     final = makeFeet(dx, dy, feet)
     final.append(T(3)(feet))
     final.extend(makeWall(dx, dy, dz - feet))
@@ -780,13 +995,21 @@ def ggpl_mobile_base(dx, dy, dz):
 # In[25]:
 
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
 def ggpl_mobile_drawer(dx, dy, dz):
+    """ ggpl_mobile_drawer
+
+    Metodo che crea i cassetti
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hpc del cassetto
+    """
+
+    #: Profondità delle pareti del cassetto
     depth_chair = 0.03 * dy
+
+    #: Grandezza della fessura per aprire il cassetto
     hole = 0.1 * dz
     return COLOR(intRGBColor([215, 190, 157]))(STRUCT([
         PROD([
