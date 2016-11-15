@@ -67,8 +67,8 @@
       <file leaf-file-name="workshop_05.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workshop_05.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="382">
-              <caret line="169" column="34" selection-start-line="169" selection-start-column="34" selection-end-line="169" selection-end-column="34" />
+            <state relative-caret-position="-143">
+              <caret line="268" column="33" selection-start-line="268" selection-start-column="33" selection-end-line="268" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -544,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1479043450831</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Il metoo ggpl_chair è stato commentato">
+      <created>1479191529476</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1479191529476</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -596,7 +603,8 @@
     <MESSAGE value="Aggiornamento metodi base" />
     <MESSAGE value="Aggiunto ultimo metodo per la creazione di una scrivania completa con cassetto" />
     <MESSAGE value="Test sul workshop" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test sul workshop" />
+    <MESSAGE value="Il metoo ggpl_chair è stato commentato" />
+    <option name="LAST_COMMIT_MESSAGE" value="Il metoo ggpl_chair è stato commentato" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -857,6 +865,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1426">
           <caret line="3095" column="17" selection-start-line="3095" selection-start-column="17" selection-end-line="3095" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -906,8 +915,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/workshop_05.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="169" column="34" selection-start-line="169" selection-start-column="34" selection-end-line="169" selection-end-column="34" />
+        <state relative-caret-position="-143">
+          <caret line="268" column="33" selection-start-line="268" selection-start-column="33" selection-end-line="268" selection-end-column="33" />
           <folding />
         </state>
       </provider>

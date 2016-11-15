@@ -170,6 +170,13 @@ def ggpl_chair_with_arm(dx, dy, dz):
         :return: hpc del bracciolo
         """
         def supportArm():
+            """supportArm
+
+            Metodo che crea i supporti per i graccioli della sedia
+
+            :return: hpc
+            """
+
             return COLOR(BLACK)(STRUCT([
                 T([2,3])([distance_leg,height_leg - depth_leg]),
                 CUBOID([depth_leg * 2 + distance_leg, depth_leg, depth_leg]),
@@ -177,6 +184,7 @@ def ggpl_chair_with_arm(dx, dy, dz):
                 CUBOID([depth_leg * 2 + distance_leg, depth_leg, depth_leg])
             ]))
 
+        #: Struttura base dei braccioli
         base = [
             COLOR(BLACK)(PROD([
                 PROD([
@@ -194,13 +202,11 @@ def ggpl_chair_with_arm(dx, dy, dz):
             ]))
         ]
 
+        #: Struttura finale dei braccioli
         final = [supportArm()]
 
         if not right:
-            final = [
-                supportArm(),
-                T(1)(distance_leg + depth_leg)
-            ]
+            final.append(T(1)(distance_leg + depth_leg))
 
         final.extend(base)
 
@@ -228,12 +234,18 @@ VIEW(v)
 
 # In[11]:
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
+
 def ggpl_chair_with_desk(dx, dy, dz):
+    """ ggpl_chair_with_desk
+
+    Metodo che crea una sedia con il tavolino
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hcp della sedia con tavolino
+    """
+
     #: Larghezza della gamba della sedia
     depth_leg = 0.05 * dx
 
@@ -243,9 +255,21 @@ def ggpl_chair_with_desk(dx, dy, dz):
     #: Altezza delle cambe della sedia
     height_leg = 0.45 * dz
 
+    #: Stuttura della sedia base
     chair = ggpl_chair_with_arm(dx, dy * 0.7, dz)
 
     def makeDesk(dx, dy, dz):
+        """ makeDesk
+
+        Metodo che crea il tavolo
+
+        :param dx: occupazione della struttura nelle x
+        :param dy: occupazione della struttura nelle y
+        :param dz: occupazione della struttura nelle z
+        :return: hcp del tavolino
+
+        """
+
         return STRUCT([
             COLOR(intRGBColor([215, 190, 157]))(PROD([
                 PROD([
