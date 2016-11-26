@@ -1057,16 +1057,27 @@ def ggpl_mobile_drawer(dx, dy, dz):
 # In[16]:
 
 
-"""
-:param dx: occupazione della struttura nelle x
-:param dy: occupazione della struttura nelle y
-:param dz: occupazione della struttura nelle z
-"""
 def ggpl_mobile_single_drawer(dx, dy, dz):
+    """ ggpl_mobile_single_drawer
+
+    Metodo che crea il mobiletto con un cassotto
+
+    :param dx: occupazione della struttura nelle x
+    :param dy: occupazione della struttura nelle y
+    :param dz: occupazione della struttura nelle z
+    :return: hpc
+    """
+
+    #: Profondità delle pareti del mobiletto
     depth_chair = 0.03 * dy
+
+    #: Altezza dei piedi del mobiletto
     feet = 0.05 * dz
+
+    #: Il mobiletto base
     mobile = ggpl_mobile_base(dx, dy, dz)
 
+    #: Struttura finale
     final = [mobile]
     final.append(T([1,2,3])([depth_chair, 0, feet +depth_chair]))
     final.append(ggpl_mobile_drawer(dx - depth_chair * 2, dy -depth_chair, +dz - feet - depth_chair * 2))
