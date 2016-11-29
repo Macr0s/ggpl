@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d33fe887-b686-4cba-a62f-207c97ac4bda" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_7.ipynb" afterPath="$PROJECT_DIR$/workshop_7.ipynb" />
     </list>
     <ignored path="2016-11-25.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,21 +26,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="workshop_7.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="workshop_7.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workshop_7.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="139">
               <caret line="299" column="0" lean-forward="false" selection-start-line="299" selection-start-column="0" selection-end-line="319" selection-end-column="41" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="workshop_7.ipynb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/workshop_7.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="7" />
             </state>
           </provider>
         </entry>
@@ -384,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480403869083</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Struttura base del notebook">
+      <created>1480403997919</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1480403997920</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -428,7 +425,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Crezione funzione per la generazione della finestra" />
     <MESSAGE value="Aggiunta commenti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aggiunta commenti" />
+    <MESSAGE value="Struttura base del notebook" />
+    <option name="LAST_COMMIT_MESSAGE" value="Struttura base del notebook" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -500,18 +498,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/workshop_7.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/workshop_7.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
           <caret line="299" column="0" lean-forward="false" selection-start-line="299" selection-start-column="0" selection-end-line="319" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workshop_7.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="7" />
         </state>
       </provider>
     </entry>
