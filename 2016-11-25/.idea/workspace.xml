@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d33fe887-b686-4cba-a62f-207c97ac4bda" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_7.ipynb" afterPath="$PROJECT_DIR$/workshop_7.ipynb" />
     </list>
     <ignored path="2016-11-25.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -381,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480403997920</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Definizione parti del workspace">
+      <created>1480404219367</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1480404219367</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -426,7 +434,8 @@
     <MESSAGE value="Crezione funzione per la generazione della finestra" />
     <MESSAGE value="Aggiunta commenti" />
     <MESSAGE value="Struttura base del notebook" />
-    <option name="LAST_COMMIT_MESSAGE" value="Struttura base del notebook" />
+    <MESSAGE value="Definizione parti del workspace" />
+    <option name="LAST_COMMIT_MESSAGE" value="Definizione parti del workspace" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
