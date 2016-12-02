@@ -2,7 +2,7 @@ from pyplasm import *
 import csv
 
 
-def createStructFromLines(file_name):
+def createStructFromLines(file_name, size, color):
     points = []
     indexs = []
     i = 0
@@ -16,18 +16,45 @@ def createStructFromLines(file_name):
             i += 2
             indexs.append([i - 1, i])
 
-    return MKPOL([
-        points,
-        indexs,
-        None
-    ])
+    return COLOR(color)(
+        OFFSET([size, size])(
+            MKPOL([
+                points,
+                indexs,
+                None
+            ])
+        )
+    )
 
 
 if __name__ == "__main__":
-    externalWall = createStructFromLines("pianimetria/lines/Muro Esterno.lines")
-    internalWall = createStructFromLines("pianimetria/lines/Strutture interne.lines")
-    windows = createStructFromLines("pianimetria/lines/Finestre.lines")
-    doors = createStructFromLines("pianimetria/lines/Porte.lines")
-    pillars = createStructFromLines("pianimetria/lines/Colonne Interne.lines")
-    balconies = createStructFromLines("pianimetria/lines/Terrazzi.lines")
+    externalWall = createStructFromLines("pianimetria/lines/Muro Esterno.lines", 4, RED)
+    internalWall = createStructFromLines("pianimetria/lines/Strutture interne.lines", 4, GREEN)
+    windows = createStructFromLines("pianimetria/lines/Finestre.lines", 4, BLACK)
+    doors = createStructFromLines("pianimetria/lines/Porte.lines", 4, WHITE)
+    pillars = createStructFromLines("pianimetria/lines/Colonne Interne.lines", 4, MAGENTA)
+    balconies = createStructFromLines("pianimetria/lines/Terrazzi.lines", 4, ORANGE)
+
+    external = DIFF([
+        externalWall,
+        windows,
+        doors
+    ])
+
+    internal = DIFF([
+        internalWall,
+        windows,
+        doors
+    ])
+
+    VIEW(STRUCT([
+        PROD([
+            external,
+            QUOTE([100])
+        ]),
+        PROD([
+            internal,
+            QUOTE([100])
+        ]),
+    ]))
 
