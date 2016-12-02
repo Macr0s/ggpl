@@ -21,18 +21,6 @@
     <path d="M951.818,565.386 L999.881,610.271" fill-opacity="0" stroke="#E800FF" stroke-width="25"/>
     <path d="M858.697,472.702 L908.202,516.421" fill-opacity="0" stroke="#E800FF" stroke-width="25"/>
     <path d="M387.389,516.421 L433.782,472.702" fill-opacity="0" stroke="#E800FF" stroke-width="25"/>
-    <path d="M341.5,565.386 L295.791,610.271" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M96.158,87.762 L97.137,296.61" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M308.673,87.762 L96.158,87.762" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M96.158,472.702 L96.158,554.904" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M96.158,554.904 L176.463,554.904" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M513.249,466.138 L513.249,548.656" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M513.249,548.656 L362.284,548.656" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M778.079,466.138 L778.079,548.656" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M778.079,548.656 L927.512,548.656" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M1195.719,477.569 L1196.198,554.904" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M1196.198,554.904 L1119.62,554.904" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M990.308,87.762 L1195.719,87.762" fill-opacity="0" stroke="#00E3FF" stroke-width="3"/>
-    <path d="M1195.719,87.762 L1196.198,294.261" fill-opacity="0" stroke="#00E3FF" stroke-width="10"/>
+    <path d="M341.5,565.386 L295.791,610.271" fill-opacity="0" stroke="#D700FF" stroke-width="24"/>
   </g>
 </svg>
