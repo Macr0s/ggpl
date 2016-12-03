@@ -157,7 +157,10 @@ if __name__ == "__main__":
             pillars,
             QUOTE([100])
         ])),
-        balconies,
+        COLOR(CYAN)(PROD([
+            balconies,
+            QUOTE([50])
+        ])),
         floor_internal,
         floor_balcony
     ]))
