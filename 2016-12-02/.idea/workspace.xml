@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1cb6dc8-afcd-4745-ae17-b0e00f7ec8e2" name="Default" comment="" />
+    <list default="true" id="a1cb6dc8-afcd-4745-ae17-b0e00f7ec8e2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image/Colonne interne@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image/Finestre@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image/Muro Esterno@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image/Pianimetria@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image/Porte@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image/Strutture interne@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image/Terrazzi@2x.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pianimetria/gif/Colonne interne.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pianimetria/gif/Finestre.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pianimetria/gif/Muro Esterno.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pianimetria/gif/Pianimetria.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pianimetria/gif/Porte.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pianimetria/gif/Strutture interne.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pianimetria/gif/Terrazzi.svg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/Colonne interne.png" afterPath="$PROJECT_DIR$/image/Colonne interne.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/Finestre.png" afterPath="$PROJECT_DIR$/image/Finestre.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/Muro Esterno.png" afterPath="$PROJECT_DIR$/image/Muro Esterno.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/Pianimetria.png" afterPath="$PROJECT_DIR$/image/Pianimetria.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/Porte.png" afterPath="$PROJECT_DIR$/image/Porte.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/Strutture interne.png" afterPath="$PROJECT_DIR$/image/Strutture interne.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/Terrazzi.png" afterPath="$PROJECT_DIR$/image/Terrazzi.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/pianimetria.idraw" afterPath="$PROJECT_DIR$/pianimetria/pianimetria.idraw" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/pianimetria.png" afterPath="$PROJECT_DIR$/pianimetria/pianimetria.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_8.ipynb" afterPath="$PROJECT_DIR$/workshop_8.ipynb" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,7 +36,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/2016-12-02$workshop_8.coverage" NAME="workshop_8 Coverage Results" MODIFIED="1480777476296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/2016-12-02$workshop_8.coverage" NAME="workshop_8 Coverage Results" MODIFIED="1480782520134" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -18,78 +44,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="workshop_8.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workshop_8.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="0" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="workshop_8.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workshop_8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="72" column="9" lean-forward="false" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
+            <state relative-caret-position="259">
+              <caret line="77" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Porte.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pianimetria/gif/Porte.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Muro Esterno.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pianimetria/gif/Muro Esterno.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1480781521000" expanded="true" signature="1653:1714" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Finestre.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pianimetria/gif/Finestre.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Colonne interne.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pianimetria/gif/Colonne interne.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1480781521000" expanded="true" signature="1535:1613" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Strutture interne.svg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pianimetria/gif/Strutture interne.svg">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1480781521000" expanded="true" signature="3646:3706" ph="..." />
               </folding>
             </state>
           </provider>
@@ -224,24 +185,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="lines" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2016-12-02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2016-12-02" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pianimetria" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gif" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,7 +494,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25250357" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -559,9 +502,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -606,23 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/workshop_8.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workshop_8.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="72" column="9" lean-forward="false" selection-start-line="72" selection-start-column="9" selection-end-line="72" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pianimetria/gif/Porte.svg">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -635,9 +561,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1480781521000" expanded="true" signature="1653:1714" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -653,9 +577,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1480781521000" expanded="true" signature="1535:1613" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -663,9 +585,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1480781521000" expanded="true" signature="3646:3706" ph="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -692,6 +612,23 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workshop_8.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/workshop_8.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="77" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
