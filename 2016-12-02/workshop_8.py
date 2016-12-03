@@ -1,6 +1,49 @@
+
+# coding: utf-8
+
+# In[1]:
+
 from pyplasm import *
 import csv
 
+
+# # Modellazione di una pianimetria di una casa
+#
+# ![pianimetria](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-12-02/image/Pianimetria.png)
+#
+# La pianimetria riportata in figura rappresenta il modello di riferimento per la realizzazione finale. Il software deve prendere dei files lines come input per la creazione delle varie parti della struttura. Questi file sono generati attraverso un tool online da file svg creati attraverso un programma di grafica vettoria che ha permesso di ricalcare la varie porti.
+#
+# Per far funzionare il programma si è voluto dividere la struttura nelle varie parti:
+#
+# - Mura esterne
+#
+# ![pianimetria](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-12-02/image/Muro Esterno.png)
+#
+# - Muri interni
+#
+# ![pianimetria](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-12-02/image/Strutture interne.png)
+#
+# - Colonne portanti
+#
+# ![pianimetria](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-12-02/image/Colonne interne.png)
+#
+# - Finestre
+#
+# ![pianimetria](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-12-02/image/Finestre.png)
+#
+# - Porte
+#
+# ![pianimetria](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-12-02/image/Porte.png)
+#
+# - Terrazzo
+#
+# ![pianimetria](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-12-02/image/Pianimetria.png)
+#
+#
+
+# ## Funzione 1: Creazione Muri
+
+# In[5]:
 
 def createStructFromLines(file_name, size):
     points = []
@@ -25,6 +68,10 @@ def createStructFromLines(file_name, size):
     )
 
 
+# ## Funzione 2: Creazione pavimento
+
+# In[6]:
+
 def createFloorFromLines(file_name, size):
     points = []
     indexs = []
@@ -47,6 +94,10 @@ def createFloorFromLines(file_name, size):
         ])
     )
 
+
+# ## Corpo centrale di unione delle varie parti
+
+# In[4]:
 
 if __name__ == "__main__":
     externalWall = createStructFromLines("pianimetria/lines/Muro Esterno.lines", 4)
@@ -86,4 +137,5 @@ if __name__ == "__main__":
             SOLIDIFY(externalWall)
         ])
     ]))
+
 
