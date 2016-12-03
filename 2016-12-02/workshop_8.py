@@ -110,14 +110,27 @@ def createFloorFromLines(file_name, size):
 if __name__ == "__main__":
     externalWall = createStructFromLines("pianimetria/lines/Muro Esterno.lines", 4)
     internalWall = createStructFromLines("pianimetria/lines/Strutture interne.lines", 4)
-    windows = createStructFromLines("pianimetria/lines/Finestre.lines", 6)
-    doors = createStructFromLines("pianimetria/lines/Porte.lines", 6)
-    pillars = createStructFromLines("pianimetria/lines/Colonne Interne.lines", 4)
+    windows = createStructFromLines("pianimetria/lines/Finestre.lines", 8)
+    doors = createStructFromLines("pianimetria/lines/Porte.lines", 8)
+    pillars = createStructFromLines("pianimetria/lines/Colonne Interne.lines", 5)
     balconies = createStructFromLines("pianimetria/lines/Terrazzi.lines", 4)
     internalFloor = createFloorFromLines("pianimetria/lines/Muro Esterno.lines", 4)
-    floar1 = createFloorFromLines("pianimetria/lines/Pavimento Parte 1.lines", 4)
-    floar2 = createFloorFromLines("pianimetria/lines/Pavimento Parte 2.lines", 4)
-    floar3 = createFloorFromLines("pianimetria/lines/Pavimento Parte 3.lines", 4)
+
+    floor_internal = STRUCT([
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 1.lines", 4),
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 2.lines", 4),
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 3.lines", 4),
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 4.lines", 4)
+    ])
+
+    floor_balcony = STRUCT([
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 5.lines", 4),
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 6.lines", 4),
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 7.lines", 4),
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 8.lines", 4),
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 9.lines", 4),
+        createFloorFromLines("pianimetria/lines/Pavimento Parte 10.lines", 4)
+    ])
 
     external = DIFF([
         externalWall,
@@ -140,11 +153,13 @@ if __name__ == "__main__":
             internal,
             QUOTE([100])
         ])),
-        pillars,
+        COLOR(GREEN)(PROD([
+            pillars,
+            QUOTE([100])
+        ])),
         balconies,
-        floar1,
-        floar2,
-        floar3
+        floor_internal,
+        floor_balcony
     ]))
 
 

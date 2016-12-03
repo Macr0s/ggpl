@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="580.303" height="506.547" viewBox="0, 0, 580.303, 506.547">
-  <g id="Pavimento_Parte_2" transform="translate(-362.405, -198.844)">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="580.303" height="415.452" viewBox="0, 0, 580.303, 415.452">
+  <g id="Pavimento_Parte_2" transform="translate(-362.405, -289.939)">
     <path d="M852.544,291.703 L942.208,704.515" fill-opacity="0" stroke="#000000" stroke-width="1"/>
     <path d="M942.208,704.515 L363.905,704.891" fill-opacity="0" stroke="#000000" stroke-width="1"/>
     <path d="M363.905,704.891 L456.198,291.439" fill-opacity="0" stroke="#000000" stroke-width="1"/>
-    <path d="M456.198,291.439 L590.255,291.703" fill-opacity="0" stroke="#000000" stroke-width="1"/>
-    <path d="M590.255,291.703 L590.255,200.344" fill-opacity="0" stroke="#000000" stroke-width="1"/>
-    <path d="M590.255,200.344 L716.979,200.344" fill-opacity="0" stroke="#000000" stroke-width="1"/>
-    <path d="M456.198,291.439 L590.255,291.703" fill-opacity="0" stroke="#000000" stroke-width="1"/>
-    <path d="M590.255,291.703 L590.255,200.344" fill-opacity="0" stroke="#000000" stroke-width="1"/>
-    <path d="M590.255,200.344 L716.979,200.344" fill-opacity="0" stroke="#000000" stroke-width="1"/>
-    <path d="M716.979,200.344 L716.979,291.703" fill-opacity="0" stroke="#000000" stroke-width="1"/>
-    <path d="M716.979,291.703 L852.544,291.703" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M456.198,291.439 L852.544,291.703" fill-opacity="0" stroke="#000000" stroke-width="1"/>
   </g>
 </svg>

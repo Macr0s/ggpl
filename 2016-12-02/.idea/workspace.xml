@@ -4,12 +4,8 @@
     <list default="true" id="a1cb6dc8-afcd-4745-ae17-b0e00f7ec8e2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/pianimetria.idraw" afterPath="$PROJECT_DIR$/pianimetria/pianimetria.idraw" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/lines/Colonne interne.lines" afterPath="$PROJECT_DIR$/pianimetria/lines/Colonne interne.lines" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/lines/Finestre.lines" afterPath="$PROJECT_DIR$/pianimetria/lines/Finestre.lines" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/lines/Muro Esterno.lines" afterPath="$PROJECT_DIR$/pianimetria/lines/Muro Esterno.lines" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/lines/Porte.lines" afterPath="$PROJECT_DIR$/pianimetria/lines/Porte.lines" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/lines/Strutture interne.lines" afterPath="$PROJECT_DIR$/pianimetria/lines/Strutture interne.lines" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/lines/Terrazzi.lines" afterPath="$PROJECT_DIR$/pianimetria/lines/Terrazzi.lines" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/lines/Pavimento Parte 2.lines" afterPath="$PROJECT_DIR$/pianimetria/lines/Pavimento Parte 2.lines" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianimetria/svg/Pavimento Parte 2.svg" afterPath="$PROJECT_DIR$/pianimetria/svg/Pavimento Parte 2.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_8.py" afterPath="$PROJECT_DIR$/workshop_8.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/2016-12-02$workshop_8.coverage" NAME="workshop_8 Coverage Results" MODIFIED="1480790652610" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/2016-12-02$workshop_8.coverage" NAME="workshop_8 Coverage Results" MODIFIED="1480792651015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -31,11 +27,21 @@
       <file leaf-file-name="workshop_8.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workshop_8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="982">
-              <caret line="146" column="14" lean-forward="false" selection-start-line="146" selection-start-column="14" selection-end-line="146" selection-end-column="14" />
+            <state relative-caret-position="1642">
+              <caret line="161" column="21" lean-forward="false" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
               <folding>
                 <element signature="e#28#49#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Terrazzi.lines" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pianimetria/lines/Terrazzi.lines">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -479,7 +485,14 @@
       <option name="project" value="LOCAL" />
       <updated>1480675280113</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Aggiornamento Lines">
+      <created>1480790738602</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1480790738602</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -492,9 +505,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -516,7 +529,8 @@
     <MESSAGE value="Aggiunti file base" />
     <MESSAGE value="Generazione base dell'interna struttura" />
     <MESSAGE value="Generazione struttura base" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generazione struttura base" />
+    <MESSAGE value="Aggiornamento Lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aggiornamento Lines" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -618,7 +632,7 @@
         <state relative-caret-position="105">
           <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -633,10 +647,18 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pianimetria/lines/Terrazzi.lines">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/workshop_8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="982">
-          <caret line="146" column="14" lean-forward="false" selection-start-line="146" selection-start-column="14" selection-end-line="146" selection-end-column="14" />
+        <state relative-caret-position="1642">
+          <caret line="161" column="21" lean-forward="false" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
           <folding>
             <element signature="e#28#49#0" expanded="true" />
           </folding>
