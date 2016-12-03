@@ -1,4 +1,3 @@
-
 # coding: utf-8
 
 # In[1]:
@@ -107,69 +106,68 @@ def createFloorFromLines(file_name, size):
 
 # In[4]:
 
-if __name__ == "__main__":
-    externalWall = createStructFromLines("pianimetria/lines/Muro Esterno.lines", 4)
-    internalWall = createStructFromLines("pianimetria/lines/Strutture interne.lines", 4)
-    windows = createStructFromLines("pianimetria/lines/Finestre.lines", 8)
-    doors = createStructFromLines("pianimetria/lines/Porte.lines", 8)
-    pillars = createStructFromLines("pianimetria/lines/Colonne Interne.lines", 5)
-    balconies = createStructFromLines("pianimetria/lines/Terrazzi.lines", 4)
-    internalFloor = createFloorFromLines("pianimetria/lines/Muro Esterno.lines", 4)
+externalWall = createStructFromLines("pianimetria/lines/Muro Esterno.lines", 4)
+internalWall = createStructFromLines("pianimetria/lines/Strutture interne.lines", 4)
+windows = createStructFromLines("pianimetria/lines/Finestre.lines", 8)
+doors = createStructFromLines("pianimetria/lines/Porte.lines", 8)
+pillars = createStructFromLines("pianimetria/lines/Colonne Interne.lines", 5)
+balconies = createStructFromLines("pianimetria/lines/Terrazzi.lines", 4)
+internalFloor = createFloorFromLines("pianimetria/lines/Muro Esterno.lines", 4)
 
-    floor_internal = STRUCT([
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 1.lines", 4),
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 2.lines", 4),
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 3.lines", 4),
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 4.lines", 4)
-    ])
+floor_internal = STRUCT([
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 1.lines", 4),
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 2.lines", 4),
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 3.lines", 4),
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 4.lines", 4)
+])
 
-    floor_balcony = STRUCT([
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 5.lines", 4),
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 6.lines", 4),
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 7.lines", 4),
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 8.lines", 4),
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 9.lines", 4),
-        createFloorFromLines("pianimetria/lines/Pavimento Parte 10.lines", 4)
-    ])
+floor_balcony = STRUCT([
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 5.lines", 4),
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 6.lines", 4),
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 7.lines", 4),
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 8.lines", 4),
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 9.lines", 4),
+    createFloorFromLines("pianimetria/lines/Pavimento Parte 10.lines", 4)
+])
 
-    external = DIFF([
+external = PROD([
+    DIFF([
         externalWall,
         windows,
         doors
-    ])
+    ]),
+    QUOTE([100])
+])
 
-    internal = DIFF([
+internal = PROD([
+    DIFF([
         internalWall,
         windows,
         doors
-    ])
+    ]),
+    QUOTE([100])
+])
 
-    VIEW(STRUCT([
-        COLOR(RED)(PROD([
-            external,
-            QUOTE([100])
-        ])),
-        COLOR(BLUE)(PROD([
-            internal,
-            QUOTE([100])
-        ])),
-        COLOR(GREEN)(PROD([
-            pillars,
-            QUOTE([100])
-        ])),
-        COLOR(CYAN)(PROD([
-            balconies,
-            QUOTE([50])
-        ])),
-        floor_internal,
-        floor_balcony
-    ]))
+pillars = PROD([
+    pillars,
+    QUOTE([100])
+])
 
+balconies = PROD([
+    balconies,
+    QUOTE([50])
+])
+
+VIEW(STRUCT([
+    COLOR(RED)(external),
+    COLOR(BLUE)(internal),
+    COLOR(GREEN)(pillars),
+    COLOR(CYAN)(balconies),
+    floor_internal,
+    floor_balcony
+]))
 
 
 # ## Risultato Finale
 
 # In[ ]:
-
-
-
