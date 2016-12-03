@@ -39,7 +39,15 @@ import csv
 #
 # ![pianimetria](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-12-02/image/Pianimetria.png)
 #
+# Considerando tutti questi livelli insieme otteniamo:
 #
+# ![pianimetria](https://raw.githubusercontent.com/Macr0s/ggpl/master/2016-12-02/image/Tutti insieme.png)
+#
+# Per generare il modello corrispondente viene creato attraverso l'utilizzo di due funzioni principali.
+#
+# 1. createStructFromLines: Crea le mura corrispondente a quella parte attraverso una creazione di una polilyne
+#
+# 2. createFloorFromLines: Crea il contorno del pavimento della zona rappresentata dal file passato come parametro
 
 # ## Funzione 1: Creazione Muri
 
@@ -137,5 +145,12 @@ if __name__ == "__main__":
             SOLIDIFY(externalWall)
         ])
     ]))
+
+
+
+# ## Risultato Finale
+
+# In[ ]:
+
 
 
