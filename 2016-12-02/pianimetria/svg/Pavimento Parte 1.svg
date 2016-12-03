@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="435.671" height="598.016" viewBox="0, 0, 435.671, 598.016">
+  <g id="Pavimento_Parte_1" transform="translate(-21.027, -107.375)">
+    <path d="M22.527,362.262 L275,108.875" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M275,108.875 L456.198,291.439" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M456.198,291.439 L363.905,704.891" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+    <path d="M363.905,704.891 L22.527,362.262" fill-opacity="0" stroke="#000000" stroke-width="1"/>
+  </g>
+</svg>
