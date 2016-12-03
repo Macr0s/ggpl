@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a1cb6dc8-afcd-4745-ae17-b0e00f7ec8e2" name="Default" comment="" />
+    <list default="true" id="a1cb6dc8-afcd-4745-ae17-b0e00f7ec8e2" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/pianimetria/pianimetria.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.ipynb_checkpoints/workshop_8-checkpoint.ipynb" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/workshop_8-checkpoint.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/workshop_8.ipynb" afterPath="$PROJECT_DIR$/workshop_8.ipynb" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,10 +25,10 @@
       <file leaf-file-name="workshop_8.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/workshop_8.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="77" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+            <state relative-caret-position="720">
+              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#28#49#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -598,10 +602,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/workshop_8.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="77" column="26" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="720">
+          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#28#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
